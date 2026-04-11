@@ -20,15 +20,15 @@ As entidades exigidas pelo enunciado foram:
 + Formações
 + MakingOf
 
-![Entidades](entidades.PNG)
+![Entidades](/images/entidades.PNG)
 
 No enunciado tambem pede para adicionar-mos uma entidade á nossa escolha. Uma vez que cada unidade curricular é lecionada por pelo menos um professor achei pretinente adicionar a entidade de Docente
 
-![Entidade Docente](EntidadeDocente.PNG)
+![Entidade Docente](/images/EntidadeDocente.PNG)
 
 Após planear as entidades que são necessarias para este projeto deparei-me com um erro de iniciante (uma grande vergonha) erro esse que se cometido em Linguagens de programação II, na minha opinião, levaria a um chumbo automatico sem opurtunidade a recurso
 
-![Erro 1](EntidadesSingular.PNG)
+![Erro 1](/images/EntidadesSingular.PNG)
 
 > Mais uma vez peço imensas desculpas Professor Pedro Alves, ensinou-me melhor que isto
 
@@ -53,23 +53,23 @@ De seguida, para as nossas entidades terem companhia é necessario crias os seus
 
 > Não escrevi aqui as entidades e respetivos atributos com as respectivas justificações uma vez que já o tinha feito em papel de modo a poupar tempo 
 
-![Entidade Licenciatura](EntidadeLicenciatura.PNG)
+![Entidade Licenciatura](/images/EntidadeLicenciatura.PNG)
 
-![Entidade Unidade Curricular](EntidadeUnidadeCurricular.PNG)
+![Entidade Unidade Curricular](/images/EntidadeUnidadeCurricular.PNG)
 
-![Entidade Projeto](EntidadeProjeto.PNG)
+![Entidade Projeto](/images/EntidadeProjeto.PNG)
 
-![Entidade Tecnologia](EntidadeTecnologia.PNG)
+![Entidade Tecnologia](/images/EntidadeTecnologia.PNG)
 
-![Entidade TFC](EntidadeTFC.PNG)
+![Entidade TFC](/images/EntidadeTFC.PNG)
 
-![Entidade Competencia](EntidadeCompetencia.PNG)
+![Entidade Competencia](/images/EntidadeCompetencia.PNG)
 
-![Entidade Formacao](EntidadeFormacao.PNG)
+![Entidade Formacao](/images/EntidadeFormacao.PNG)
 
-![Entidade MakingOf](EntidadeMakingOf.PNG)
+![Entidade MakingOf](/images/EntidadeMakingOf.PNG)
 
-![Entidade Docente](EntidadeDocente.PNG)
+![Entidade Docente](/images/EntidadeDocente.PNG)
 
 --- 
 
@@ -78,11 +78,13 @@ De seguida, para as nossas entidades terem companhia é necessario crias os seus
 verção 1 :
 O objetivo sobretudo deste diagrama era planear e perceber asrelações entre as entidades, não achei muito relevante, e tornando o DER mais simpleficado, meter os atributos de cada entidade
 
-![DER v1](DERv1.PNG)
+![DER v1](/images/DERv1.PNG)
 
-Mas como a minha mãe costuma dizer aqui o menino não manda nada decidi fazer um DER mais completo, com relações e tipos de atributos tudo bonitinho:
+Mas como a minha mãe costuma dizer "aqui o menino não decide nada" decidi fazer um DER mais completo, com relações e tipos de atributos tudo bonitinho:
 
-![DER v2](DERv2.PNG)
+![DER v2 falha](/images/DERv2falha.PNG)
+
+![DER v2](/images/pagina7.jpeg)
 
 ---
 
@@ -90,15 +92,15 @@ Mas como a minha mãe costuma dizer aqui o menino não manda nada decidi fazer u
 
 Alteração: Tipagem
 
-![tipagem](tipagem.PNG)
+![tipagem](/images/tipagem.PNG)
 
 Alteração: Formação
 
-![formação](formacao.PNG)
+![formação](/images/formacao.PNG)
 
 Alteração: MakingOf
 
-![makingof](maikingof.PNG)
+![makingof](/images/makingof.PNG)
 
 **Obras de arte**
 
@@ -109,31 +111,31 @@ Aqui estão as obras de arte que fiz durante a criação deste projeto:
 
 Cromo de modelação:
 
-![Cromo](cromo.PNG)
+![Cromo](/images/cromo.PNG)
 
 Carinha feliz:
 
-![feliz](feliz.PNG)
+![feliz](/images/feliz.PNG)
 
 Puro Desespero:
 
-![Desespero](desespero.PNG)
+![Desespero](/images/desespero.PNG)
 
 ## Fotos das paginas do MakingOf
 
-![Pagina 1](pagina1.jpeg)
+![Pagina 1](/images/pagina1.jpeg)
 
-![Pagina 2](pagina2.jpeg)
+![Pagina 2](/images/pagina2.jpeg)
 
-![Pagina 3](pagina3.jpeg)
+![Pagina 3](/images/pagina3.jpeg)
 
-![Pagina 4](pagina4.jpeg)
+![Pagina 4](/images/pagina4.jpeg)
 
-![Pagina 5](pagina5.jpeg)
+![Pagina 5](/images/pagina5.jpeg)
 
-![Pagina 6](pagina6.jpeg)
+![Pagina 6](/images/pagina6.jpeg)
 
-![Pagina 7](pagina7.jpeg)
+![Pagina 7](/images/pagina7.jpeg)
 
 ## Aprendizagens
 Não deixem os trabalhos para a ultima :) 
