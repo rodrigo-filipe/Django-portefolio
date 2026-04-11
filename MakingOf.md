@@ -80,20 +80,44 @@ O objetivo sobretudo deste diagrama era planear e perceber asrelações entre as
 
 ![DER v1](DERv1.PNG)
 
+Mas como a minha mãe costuma dizer aqui o menino não manda nada decidi fazer um DER mais completo, com relações e tipos de atributos tudo bonitinho:
+
+![DER v2](DERv2.PNG)
+
 ---
 
 **Erros e alterações posteriores**
 
 Alteração: Tipagem
 
+![tipagem](tipagem.PNG)
 
+Alteração: Formação
 
+![formação](formacao.PNG)
 
+Alteração: MakingOf
 
+![makingof](maikingof.PNG)
 
+**Obras de arte**
 
+Em desespero decido virar artista, deve ser um trauma meu
+> Talvez seria melhor markar uma consulta com um psicologo da Lusofona
 
+Aqui estão as obras de arte que fiz durante a criação deste projeto:
 
+Cromo de modelação:
+
+![Cromo](cromo.PNG)
+
+Carinha feliz:
+
+![feliz](feliz.PNG)
+
+Puro Desespero:
+
+![Desespero](desespero.PNG)
 
 ## Fotos das paginas do MakingOf
 
@@ -109,8 +133,7 @@ Alteração: Tipagem
 
 ![Pagina 6](pagina6.jpeg)
 
-## Aprendizagens
-(o que foi aprendido esta semana)
+![Pagina 7](pagina7.jpeg)
 
-## Notas adicionais
-(opcional, se quiserem partilhar informação que não se encaixa nas secções anteriores)
+## Aprendizagens
+Não deixem os trabalhos para a ultima :) 
