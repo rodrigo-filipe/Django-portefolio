@@ -1,8 +1,12 @@
 # MakingOf — Portefolio em Django
 
 ## Trabalho realizado
+
 ### Parte I
+
 Na primeira parte do projeto o objetivo era modelar um portefolio em Django.
+
+---
 
 **Entidades**
 
@@ -41,9 +45,49 @@ Entidades:
 + MakingOf
 + Docente
 
+---
+
 **Atributos**
 
 De seguida, para as nossas entidades terem companhia é necessario crias os seus respetivos atributos
+
+> Não escrevi aqui as entidades e respetivos atributos com as respectivas justificações uma vez que já o tinha feito em papel de modo a poupar tempo 
+
+![Entidade Licenciatura](EntidadeLicenciatura.PNG)
+
+![Entidade Unidade Curricular](EntidadeUnidadeCurricular.PNG)
+
+![Entidade Projeto](EntidadeProjeto.PNG)
+
+![Entidade Tecnologia](EntidadeTecnologia.PNG)
+
+![Entidade TFC](EntidadeTFC.PNG)
+
+![Entidade Competencia](EntidadeCompetencia.PNG)
+
+![Entidade Formacao](EntidadeFormacao.PNG)
+
+![Entidade MakingOf](EntidadeMakingOf.PNG)
+
+![Entidade Docente](EntidadeDocente.PNG)
+
+--- 
+
+**Diagrama DER**
+
+verção 1 :
+O objetivo sobretudo deste diagrama era planear e perceber asrelações entre as entidades, não achei muito relevante, e tornando o DER mais simpleficado, meter os atributos de cada entidade
+
+![DER v1](DERv1.PNG)
+
+---
+
+**Erros e alterações posteriores**
+
+Alteração: Tipagem
+
+
+
 
 
 
@@ -67,9 +111,6 @@ De seguida, para as nossas entidades terem companhia é necessario crias os seus
 
 ## Aprendizagens
 (o que foi aprendido esta semana)
-
-## Colaborações
-(se tiverem ajudado/colaborado com algum(s) colega(s) ou tiverem sido ajudados por algum(s) colega(s), devem colocar aqui quem foram os colegas e em que consistiu a colaboração. Exemplo: Para a tarefa X tive a ajuda do colega Y. As colaborações só são contabilizadas se forem simétricas, ou seja, se estiverem registadas no worklog dos vários alunos que colaboraram)
 
 ## Notas adicionais
 (opcional, se quiserem partilhar informação que não se encaixa nas secções anteriores)
