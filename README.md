@@ -1,6 +1,9 @@
 # Django-portefolio
 Progeto para portefolio
 
+--- 
+
+
 ## Como executar
 1 - Abrir o cmd
 
@@ -55,8 +58,9 @@ Se quiser entrar no painel de admin é só escrever:
 ```
 http://127.0.0.1:8000/admin
 ```
+---
 
-Alterações ao models:
+## Alterações ao models:
 
 Após qualquer alteração do models deve se fazer os seguintes comandos:
 
@@ -64,5 +68,20 @@ Após qualquer alteração do models deve se fazer os seguintes comandos:
 python manage.py makemigrations
 python manage.py migrate
 ```
+
+---
+
+## comandos do manage
+
+```
+python manage.py import_tfc
+python manage.py import_data
+```
+
+---
+
+## Informações adicionais
++ O script de import dos TFCs foi gerado por inteligencia artificial, não foi criado por mim
++ A entidade TFC tem informações incorretas uma vez que o meu codigo de extração dos TFCs estava incorreto e não consegui corrigir
 
 
