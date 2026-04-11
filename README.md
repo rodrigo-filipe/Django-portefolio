@@ -56,4 +56,13 @@ Se quiser entrar no painel de admin é só escrever:
 http://127.0.0.1:8000/admin
 ```
 
+Alterações ao models:
+
+Após qualquer alteração do models deve se fazer os seguintes comandos:
+
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+
 
