@@ -1,0 +1,684 @@
+[
+    {
+        "titulo": "9 Dissertações de Mestrado",
+        "alunos": "Assessing effectiveness of language models in Project Management Tasks",
+        "orientador": "João Caldeira",
+        "ano": "2025",
+        "licenciatura": "Não encontrado",
+        "email": "alexandreajunior@gmail.com",
+        "resumo": "Assessing effectiveness of language models in Project Management Tasks",
+        "palavras_chave": [
+            "LLM; Project Management; artificial intelligence; task effectiveness."
+        ],
+        "areas": [
+            "Artificial Intelligence",
+            "Management."
+        ],
+        "tecnologias_usadas": [
+            "LLM",
+            "Ollama",
+            "OpenAI."
+        ],
+        "link_pdf": "",
+        "imagem": "https://teses.deisi.ulusofona.pt/media/teses/tese_LeMGmVq.png",
+        "rating": 6
+    },
+    {
+        "titulo": "Assessing effectiveness of language models in Project Management Tasks",
+        "alunos": "Alexandre Jose Silva Abdala Junior",
+        "orientador": "João Caldeira",
+        "ano": "2025",
+        "licenciatura": "Não encontrado",
+        "email": "alexandreajunior@gmail.com",
+        "resumo": "Assessing effectiveness of language models in Project Management Tasks",
+        "palavras_chave": [
+            "LLM; Project Management; artificial intelligence; task effectiveness."
+        ],
+        "areas": [
+            "Artificial Intelligence",
+            "Management."
+        ],
+        "tecnologias_usadas": [
+            "LLM",
+            "Ollama",
+            "OpenAI."
+        ],
+        "link_pdf": "",
+        "imagem": "https://teses.deisi.ulusofona.pt/media/teses/tese_LeMGmVq.png",
+        "rating": 6
+    },
+    {
+        "titulo": "Comid: Identificação de Comunidades Online",
+        "alunos": "Thiago Henrique Dos Santos",
+        "orientador": "Manuel Marques Pita",
+        "ano": "2025",
+        "licenciatura": "Não encontrado",
+        "email": "thiagohenrique@gmail.com",
+        "resumo": "O crescente volume de interações em comunidades virtuais, como fóruns do Reddit, oferece oportunidades valiosas para a investigação de dinâmicas comunicativas, compartilhamento de conhecimento e formação de grupos em ambientes digitais. No entanto, a natureza informal, ruidosa e desestruturada dos textos nessas plataformas impõe desafios metodológicos significativos para análises quantitativas e qualitativas de linguagem. Esta dissertação propõe e apresenta o Comid, uma ferramenta computacional desenvolvida para o pré-processamento, organização e análise de dados textuais provenientes de comunidades do Reddit. O Comid integra métodos avançados de limpeza textual, normalização linguística, geração de corpora, análise de tópicos e agrupamento de interações, oferecendo um pipeline robusto e replicável para pesquisadores interessados em estudos de comunicação mediada por computador. A ferramenta permite a seleção e filtragem criteriosa de conteúdos com base em características estruturais (como tamanho do texto e nível de interação), bem como a organização de conversações por tópicos e períodos de tempo. Além disso, incorpora técnicas de extração de unigramas, bigramas e frases, com cálculo de associações estatísticas, possibilitando análises exploratórias e confirmatórias sobre as dinâmicas discursivas das comunidades analisadas. Esta dissertação contribui metodologicamente ao campo dos estudos de comunidades online, oferecendo uma solução flexível, extensível e alinhada às boas práticas de ciência de dados para a análise de grandes volumes de interações textuais.",
+        "palavras_chave": [
+            "API; Análise de Comunidades Online; Análise de Conversação; Comid; Modelação de Tópicos; NLP; Python; Reddit."
+        ],
+        "areas": [
+            "Ciência de Dados",
+            "Inteligência Artificial",
+            "Processamento de Linguagem Natura (NLP)",
+            "Redes Sociais",
+            "Tecnologia e Desenvolvimento de Software."
+        ],
+        "tecnologias_usadas": [
+            "Big Data",
+            "Data Mining",
+            "Python",
+            "WebAPI."
+        ],
+        "link_pdf": "",
+        "imagem": "https://teses.deisi.ulusofona.pt/media/teses/pip-comid.PNG",
+        "rating": 9
+    },
+    {
+        "titulo": "Cost Reduction and Optimization in Cloud Environments",
+        "alunos": "João Pedro Matos",
+        "orientador": "Paulo Guedes, Pedro Perdigão",
+        "ano": "2025",
+        "licenciatura": "Não encontrado",
+        "email": "jpcamatos31@gmail.com",
+        "resumo": "Cost reduction and optimization in cloud environments are crucial for organizations seeking to maximize operational efficiency while maintaining competitiveness in a rapidly evolving digital landscape. This thesis explores cloud optimization strategies, focusing on how organizations can effectively manage resources to minimize waste and optimize performance. Various tools, methods, and practices are highlighted in this type of environment that contribute to cost reduction, while ensuring scalability, security, and compliance. By implementing effective cost management practices, organizations not only improve their financial health but also enhance their capacity for innovation, contributing to long-term sustainability and growth.",
+        "palavras_chave": [
+            "Azure; Infraestrutura."
+        ],
+        "areas": [
+            "Tecnologia e Desenvolvimento de Software."
+        ],
+        "tecnologias_usadas": [
+            "Azure."
+        ],
+        "link_pdf": "",
+        "imagem": "https://teses.deisi.ulusofona.pt/media/teses/YT-Cloud-Computing-2.png",
+        "rating": 9
+    },
+    {
+        "titulo": "Energy Consumption Crawler",
+        "alunos": "Gonçalo Cabeleira",
+        "orientador": "João Caldeira",
+        "ano": "2025",
+        "licenciatura": "Não encontrado",
+        "email": "goncalocabeleira123@gmail.com",
+        "resumo": "The topic of energy consumption has gained traction in recent years, as has environmental sustainability, especially when it comes to machine learning algorithms and their massive usage of resources, prominently during training. However, most data scientists do not have the knowledge or the conduct to try and solve this issue, leading to an over-exhaustion of resources and longer development times. Professionals across the globe are worried about the negative impacts these huge cost sinks can have on future generations and the future of research and development of new technologies. This paper proposes a Python software package designed to enhance the efficiency of machine-learning workflows by estimating the execution time of code within Jupyter Notebooks. This package enables data scientists to optimize their code for reduced runtime and energy consumption by providing real-time insights into computational costs. This approach contributes to the broader goal of sustainable machine learning by promoting resource-efficient practices in model development and experimentation.",
+        "palavras_chave": [
+            "Carbon Emissions; Code Carbon; Energy Consumption; Python."
+        ],
+        "areas": [
+            "Ciência de Dados",
+            "Tecnologia e Desenvolvimento de Software."
+        ],
+        "tecnologias_usadas": [
+            "Code Carbon",
+            "Microsoft Visual Studio",
+            "Python."
+        ],
+        "link_pdf": "",
+        "imagem": "https://teses.deisi.ulusofona.pt/media/teses/Screenshot_454.png",
+        "rating": 9
+    },
+    {
+        "titulo": "Evolução dos Sistemas de Autenticação Forte: análise e implementação",
+        "alunos": "Jilson Almeida Benjamim",
+        "orientador": "José Rogado",
+        "ano": "2025",
+        "licenciatura": "Não encontrado",
+        "email": "jilsonbenjamim@gmail.com",
+        "resumo": "A evolução dos sistemas de autenticação forte tem sido crucial para a proteção de dados sensíveis e o combate ao acesso não autorizado em plataformas digitais. Esta dissertação explora a análise e implementação de soluções de autenticação multifatorial (MFA), com foco no uso de SMS, OTP e WebAuthn. A pesquisa examina como essas tecnologias de autenticação evoluíram ao longo do tempo e como podem ser aplicadas de maneira eficaz em diferentes contextos, desde locais com infraestrutura limitada até ambientes com infraestrutura avançada. O estudo propõe soluções que equilibram segurança e usabilidade, permitindo a adaptação das tecnologias de autenticação para diferentes níveis de acesso à TI e de letramento digital, assegurando proteção sem comprometer a experiência do usuário.",
+        "palavras_chave": [
+            "Analfabetismo digital; Autenticação forte; MFA; OTP; Segurança da informação; webauthn."
+        ],
+        "areas": [
+            "Cibersegurança."
+        ],
+        "tecnologias_usadas": [
+            "AWS",
+            "HTML",
+            "JavaScript",
+            "Laravel",
+            "PHP",
+            "Tailwind CSS."
+        ],
+        "link_pdf": "",
+        "imagem": "https://teses.deisi.ulusofona.pt/media/teses/Authentica%C3%A7%C3%A3ohibrida.jpg",
+        "rating": 9
+    },
+    {
+        "titulo": "Identificação e Deteção em Tempo Real de Ameaças de Phishing em Aplicações de Mensagens Instantâneas",
+        "alunos": "João Tiago Durães",
+        "orientador": "João Craveiro",
+        "ano": "2025",
+        "licenciatura": "Não encontrado",
+        "email": "joao.tiago.duraes@gmail.com",
+        "resumo": "A deteção de ataques de phishing tornou-se um desafio crescente, devido à constante evolução das técnicas dos cibercriminosos e à falta de literacia digital de muitos utilizadores. Este projeto visa desenvolver uma solução para identificar e alertar, em tempo real, para ameaças de phishing. A metodologia envolve a análise de mensagens reais partilhadas nas plataformas, bem como a criação de uma API com algoritmos de machine learning em Python para identificar padrões característicos de phishing.",
+        "palavras_chave": [
+            "alerta em tempo real; ameaças; aplicações de mensagens instantâneas; machine learning; phishing."
+        ],
+        "areas": [
+            "Cibersegurança."
+        ],
+        "tecnologias_usadas": [
+            "Python."
+        ],
+        "link_pdf": "",
+        "imagem": "https://teses.deisi.ulusofona.pt/media/teses/Captura_de_ecra_2025-04-15_as_23.36.58.png",
+        "rating": 9
+    },
+    {
+        "titulo": "Melhores Práticas Na Transformação Digital Das Pmes Portuguesas: Um Estudo De Caso Do Setor Do Turismo, Hotelaria E Restauração No Município Do Barreiro.",
+        "alunos": "Valdemar Sebastião Buco",
+        "orientador": "Rui Ribeiro",
+        "ano": "2025",
+        "licenciatura": "Não encontrado",
+        "email": "valdemar.buco@gmail.com",
+        "resumo": "As palavras, transformação digital (TD) resumem um movimento de transformação tecnológica que decorre há várias décadas, com as empresas a integrarem tecnologias digitais nos seus processos criativos. A pandemia da COVID-19 acelerou essa adoção e expôs as vulnerabilidades de setores intensivos em contacto com clientes, como o turismo, hotelaria e restauração (THR). A TD tornou-se um imperativo estratégico para as empresas, independentemente da sua dimensão ou setor de atividade. Em Portugal, onde o turismo representa 7.3% do PIB, as micro, pequenas e médias empresas (PMEs), que representam 99.9% do tecido empresarial nacional, enfrentam desafios específicos na implementação de projetos de TD, apesar da sua importância na economia. O presente estudo visa identificar boas práticas, dificuldades e oportunidades relacionadas com a transformação digital nestes setores, contribuindo para o desenvolvimento económico e digital do município do Barreiro. A pesquisa centra-se em identificar as melhores práticas, os fatores que influenciam o sucesso ou fracasso da TD, e o impacto das políticas públicas locais de digitalização. A pergunta central que orienta o estudo é: \"Quais as melhores práticas de transformação digital adotadas por PMEs do setor do turismo, hotelaria e restauração no município do Barreiro, e que fatores influenciam o seu sucesso ou fracasso?\" Para responder a esta pergunta, optou-se por uma abordagem mista, que combina a revisão sistemática da literatura segundo o modelo PRISMA, com um estudo exploratório de múltiplos casos no Barreiro. Os dados são recolhidos por meio de entrevistas semiestruturadas a gestores e especialistas, e um questionário com escala de Likert para avaliar a maturidade digital das empresas. A análise dos dados íntegra técnicas qualitativas e quantitativas, com triangulação para validar os resultados. O estudo pretende contribuir para a literatura ao preencher lacunas sobre a TD em PMEs do THR em contextos regionais específicos, oferecendo recomendações práticas para empresas e políticas públicas. Palavras-chave: Transformação digital, PMEs, turismo, hotelaria, restauração, boas práticas.",
+        "palavras_chave": [
+            "Hotelaria; Restauração; Transformação Digital; Turismo."
+        ],
+        "areas": [
+            "Inovação",
+            "PMEs",
+            "Redes Sociais",
+            "Tecnologia da Informação",
+            "turismo."
+        ],
+        "tecnologias_usadas": [
+            "Google Charts",
+            "IA",
+            "Research Methodologies."
+        ],
+        "link_pdf": "",
+        "imagem": "https://teses.deisi.ulusofona.pt/media/teses/Transforma%C3%A7%C3%A3o_digital.png",
+        "rating": 9
+    },
+    {
+        "titulo": "Ray Tracing and SSR: A Hybrid Approach",
+        "alunos": "Leandro Brás",
+        "orientador": "Diogo de Andrade, Nuno Fachada",
+        "ano": "2025",
+        "licenciatura": "Não encontrado",
+        "email": "leandro-xy@hotmail.com",
+        "resumo": "Olhando para os jogos de hoje, podemos observar um claro avanço em termos de realismo com o uso de novas tecnologias como o Ray-Tracing, apesar de ser uma tecnologia que proporciona um nível de realismo bastante elevado, esta, tem também um custo de desempenho bastante elevado. Aqui propõem-se a criação de uma mini render engine, onde testamos um ambiente 3D de forma a verificar a qualidade de imagem e tempo de render entre estes dois sistemas existentes (SSR & Ray Tracing), e um sistema híbrido que junta ambas as técnicas de forma a tentar maximizar o desempenho e minimizar as falhas que ambas têm. Esta técnica passa pela criação de um render inicial de Screen-Space, a partir de aqui retiramos a informação de onde esta técnica inicial não consegue atuar, e aplica-se a técnica de Ray-Tracing por cima. Por final, realizar-se-á uma análise de performance e qualidade de imagem a estas 3 técnicas com o objetivo de determinar se esta técnica híbrida será viável para uso em engines de jogos.",
+        "palavras_chave": [
+            "Jogos."
+        ],
+        "areas": [
+            "Computação Gráfica",
+            "Computer Graphics."
+        ],
+        "tecnologias_usadas": [
+            "C++."
+        ],
+        "link_pdf": "",
+        "imagem": "https://teses.deisi.ulusofona.pt/media/teses/Untitled.png",
+        "rating": 9
+    },
+    {
+        "titulo": "Telemedicina Segura e Escalável – Uma Abordagem de Contentores e Microserviços",
+        "alunos": "Ricardo Gonçalves",
+        "orientador": "Paulo Guedes, Wellington Oliveira",
+        "ano": "2025",
+        "licenciatura": "Não encontrado",
+        "email": "ricardo.goncalves252@gmail.com",
+        "resumo": "Com o crescimento da telemedicina como solução para cuidados de saúde à distância, surgem desafios significativos ao nível da segurança dos dados, escalabilidade dos sistemas e conformidade com regulamentações como o RGPD e a HIPAA. Esta dissertação propõe o desenvolvimento de uma framework baseada em containers e arquitetura de microsserviços, permitindo criar plataformas de telemedicina seguras, escaláveis e em conformidade legal. A solução permite o agendamento e realização de consultas remotas, gestão de dados clínicos sensíveis e adaptação a diferentes especialidades médicas, garantindo robustez técnica e confiança para profissionais e pacientes.",
+        "palavras_chave": [
+            "Aplicação Web; HIPAA; Microsserviços; RGPD; Telemedicina."
+        ],
+        "areas": [
+            "Inovação",
+            "Tecnologia da Informação",
+            "Tecnologia e Desenvolvimento de Software",
+            "saúde."
+        ],
+        "tecnologias_usadas": [
+            "Docker",
+            "PostgreSQL",
+            "Ruby on Rails."
+        ],
+        "link_pdf": "",
+        "imagem": "https://teses.deisi.ulusofona.pt/media/teses/thesis.png",
+        "rating": 9
+    },
+    {
+        "titulo": "16 Teses de Doutoramento",
+        "alunos": "6G: Impact analysis and new business models in the 5th Industrial Revolution",
+        "orientador": "Rui Ribeiro",
+        "ano": "2025",
+        "licenciatura": "Não encontrado",
+        "email": "gilsonsf2008@gmail.com",
+        "resumo": "This proposal entitled \"\"6G: Impact analysis and new business models in the 5th Industrial Revolution\"\" aims to investigate the impact of the new 6G generation and its future evolutions in the context of virtualization, briefly highlighting its technical advances, potential applications, ethical challenges and implications in the economic, social and government sectors. 6G is planned for 2030, in which it largely supplants the standards of the current generation, as it integrates with AI, quantum computing, sustainability, ultra-fast connectivity and very low latency, enabling immersive and interactive digital experiences in the context of the Metaverse and much beyond. The work starts from an introduction to the evolutions of mobile networks, from 1G to 6G, through analog, digital transformations and changes in connectivity patterns and services. Notably 6G emerges as an infrastructure capable of supporting disruptive advances, such as holographic communication, neural networks and bio-interfaces, Internet of the Senses and high- speed services including spatial connectivity interactions. In addition, elements such as security, privacy, ethics and sustainability are highlighted as crucial challenges to ensure the reliability and viability of this global transformation. The research proposes an interdisciplinary approach, using innovation diffusion model (DOI) and PRISMA methodology for systematic review, in addition to roadmapping and modeling for prospective scenario. The study addresses the technical requirements, new business models, regulations and ethical impacts, also proposing frameworks aimed at compatibility between technology and strategic sectors. The central point included digital to virtual convergence, the transition to smart networks with AI, and the proposal was the creation of a holistic analysis model for global virtual transformation.",
+        "palavras_chave": [
+            "6G; Gestão da Informação; Informação; Inovação; Inteligência Artificial; Internet das Coisas; Transformação; Transformação Digital; Virtual."
+        ],
+        "areas": [
+            "Artificial Intelligence",
+            "Cibersegurança",
+            "Gestão",
+            "Inovação",
+            "Management",
+            "Segurança Informática",
+            "Tecnologia da Informação",
+            "Telecomunicações",
+            "Wireless communication."
+        ],
+        "tecnologias_usadas": [
+            "6G",
+            "Bases de Dados",
+            "Big Data",
+            "Blockchain",
+            "Deep learning",
+            "Entity Framework",
+            "Google Charts",
+            "Google Drive",
+            "IA",
+            "Jira",
+            "LLM",
+            "Machine Learning",
+            "RGPD",
+            "Realidade Aumentada",
+            "Research Methodologies",
+            "Web."
+        ],
+        "link_pdf": "",
+        "imagem": "https://teses.deisi.ulusofona.pt/media/teses/logoTese.png",
+        "rating": 9
+    },
+    {
+        "titulo": "6G: Impact analysis and new business models in the 5th Industrial Revolution",
+        "alunos": "Gilson Da Silva Ferreira",
+        "orientador": "Rui Ribeiro",
+        "ano": "2025",
+        "licenciatura": "Não encontrado",
+        "email": "gilsonsf2008@gmail.com",
+        "resumo": "This proposal entitled \"\"6G: Impact analysis and new business models in the 5th Industrial Revolution\"\" aims to investigate the impact of the new 6G generation and its future evolutions in the context of virtualization, briefly highlighting its technical advances, potential applications, ethical challenges and implications in the economic, social and government sectors. 6G is planned for 2030, in which it largely supplants the standards of the current generation, as it integrates with AI, quantum computing, sustainability, ultra-fast connectivity and very low latency, enabling immersive and interactive digital experiences in the context of the Metaverse and much beyond. The work starts from an introduction to the evolutions of mobile networks, from 1G to 6G, through analog, digital transformations and changes in connectivity patterns and services. Notably 6G emerges as an infrastructure capable of supporting disruptive advances, such as holographic communication, neural networks and bio-interfaces, Internet of the Senses and high- speed services including spatial connectivity interactions. In addition, elements such as security, privacy, ethics and sustainability are highlighted as crucial challenges to ensure the reliability and viability of this global transformation. The research proposes an interdisciplinary approach, using innovation diffusion model (DOI) and PRISMA methodology for systematic review, in addition to roadmapping and modeling for prospective scenario. The study addresses the technical requirements, new business models, regulations and ethical impacts, also proposing frameworks aimed at compatibility between technology and strategic sectors. The central point included digital to virtual convergence, the transition to smart networks with AI, and the proposal was the creation of a holistic analysis model for global virtual transformation.",
+        "palavras_chave": [
+            "6G; Gestão da Informação; Informação; Inovação; Inteligência Artificial; Internet das Coisas; Transformação; Transformação Digital; Virtual."
+        ],
+        "areas": [
+            "Artificial Intelligence",
+            "Cibersegurança",
+            "Gestão",
+            "Inovação",
+            "Management",
+            "Segurança Informática",
+            "Tecnologia da Informação",
+            "Telecomunicações",
+            "Wireless communication."
+        ],
+        "tecnologias_usadas": [
+            "6G",
+            "Bases de Dados",
+            "Big Data",
+            "Blockchain",
+            "Deep learning",
+            "Entity Framework",
+            "Google Charts",
+            "Google Drive",
+            "IA",
+            "Jira",
+            "LLM",
+            "Machine Learning",
+            "RGPD",
+            "Realidade Aumentada",
+            "Research Methodologies",
+            "Web."
+        ],
+        "link_pdf": "",
+        "imagem": "https://teses.deisi.ulusofona.pt/media/teses/logoTese.png",
+        "rating": 9
+    },
+    {
+        "titulo": "Adaptive Detection and Characterization of Plume-Dominated Wildfires",
+        "alunos": "Afonso Oliveira",
+        "orientador": "João P. Matos-Carvalho, Nuno Fachada",
+        "ano": "2025",
+        "licenciatura": "Não encontrado",
+        "email": "afonso.oliveira@ulusofona.pt",
+        "resumo": "Extreme wildfires are increasingly hazardous, particularly plume-dominated fires, which exhibit unpredictable behavior due to their self-sustaining convective columns. Despite their significance, these fires remain poorly understood, hindered by limited observational data and fragmented remote sensing approaches. This paper proposes an Artificial Intelligence-based method adaptive framework for real-time detection and characterization of plume-dominated wildfires using satellite and aerial imagery. The framework focuses on three critical aspects: fire intensity, vertical plume development, and rotational motion. Leveraging satellite data, alongside aerial datasets, the methodology dynamically adapts to available data to ensure accurate assessments. The final output is a risk-graded map identifying zones of active or potential plume-dominated activity, and a deeper characterization of the plume internal mechanisms. The proposed framework has significant potential for improving wildfire prediction, management, and mitigation strategies, contributing to improved safety and resource allocation in wildfire-prone regions.",
+        "palavras_chave": [
+            "Fogos; Mapas Multiespectrais; Modelação; Simulação; Wildfires."
+        ],
+        "areas": [
+            "Artificial Intelligence",
+            "Inteligência Artificial",
+            "Sustentabilidade",
+            "Tecnologias Geoespaciais",
+            "ambiente",
+            "sociedade."
+        ],
+        "tecnologias_usadas": [
+            "Deep learning",
+            "Python."
+        ],
+        "link_pdf": "",
+        "imagem": "https://teses.deisi.ulusofona.pt/media/teses/plume-oriented.png",
+        "rating": 9
+    },
+    {
+        "titulo": "Enterprise Rating for Information Systems",
+        "alunos": "Mikael Saraiva",
+        "orientador": "Rui Ribeiro",
+        "ano": "2025",
+        "licenciatura": "Não encontrado",
+        "email": "msaraiva88@gmail.com",
+        "resumo": "This study proposes an innovative Rating Model for Information Systems, developed through long-term research on organizational best practices and widely adopted frameworks, such as ITIL, COBIT, MOF, and ISO9001. A comprehensive state-of-the-art analysis highlighted the absence of specific ratings for Information Systems, prompting a review of established models in areas like finance (Standard & Poor’s) and cybersecurity (BitSight). The methodology combined a systematic literature review, analysis of case studies on framework implementation outcomes, and primary data collection through questionnaires and interviews with organizational managers. This process led to the development of equations and reference models, supporting the proposed rating as a practical tool for assessing and continuously improving organizational Information Systems.",
+        "palavras_chave": [
+            "Framework; Gestão de Empresas; Gestão de Sistemas de Informação; Sistemas de Informação."
+        ],
+        "areas": [
+            "Ciência de Dados",
+            "Management",
+            "empresarial",
+            "gestão."
+        ],
+        "tecnologias_usadas": [
+            "Big Data",
+            "CSS",
+            "Data Mining",
+            "HTML",
+            "Machine Learning",
+            "Python."
+        ],
+        "link_pdf": "",
+        "imagem": "https://teses.deisi.ulusofona.pt/media/teses/rating1.png",
+        "rating": 6
+    },
+    {
+        "titulo": "Fall Detection and Fall Prevention",
+        "alunos": "Jorge Leiria Pires",
+        "orientador": "Slaviša Tomić, Sérgio Duarte",
+        "ano": "2025",
+        "licenciatura": "Não encontrado",
+        "email": "jorge.leiria.pires@gmail.com",
+        "resumo": "The main contribution of the research work will be focused on development of schemes to detect if someone is at risk of falling or has fallen. This work will strive to respond to several questions, such as: • How to detect if a person has fallen? • Are there any off-the-shelf devices that could be employed to prevent/detect falls? • How to improve detection performance, regarding precision, complexity and/or energy costs, without requiring expensive devices? • Will it be possible to process accelerometer’s collected data on the local device itself, using deep learning algorithms to prevent/detect falls, without having to send it to a remote server?",
+        "palavras_chave": [
+            "Doutoramento em informática – novos media e sistemas ubíquos; Quedas."
+        ],
+        "areas": [
+            "Artificial Intelligence",
+            "Tecnologia da Informação."
+        ],
+        "tecnologias_usadas": [
+            "C++",
+            "Machine Learning",
+            "Matlab",
+            "Programação",
+            "Python."
+        ],
+        "link_pdf": "",
+        "imagem": "https://teses.deisi.ulusofona.pt/media/teses/fallimpact.jpeg",
+        "rating": 6
+    },
+    {
+        "titulo": "Graph-based Environment Generation",
+        "alunos": "Diogo De Andrade",
+        "orientador": "Nuno Maria Carvalho Pereira Fernandes Fachada",
+        "ano": "2025",
+        "licenciatura": "Não encontrado",
+        "email": "diogo.andrade@ulusofona.pt",
+        "resumo": "The expanding complexity of modern 3D games places increasing demands on developers, particularly in area and level design. Initial level prototyping faces pressure for early completion as it sets the stage for subsequent engineering and artistic tasks. Addressing this challenge, we introduce a suite of algorithms aimed at streamlining the creation of 3D environments, with a specific focus on enhancing efficiency during the greyboxing phase of level design. The goal is to equip level designers with tools that enable rapid iteration and acceleration of this crucial stage. The first of these algorithms is dedicated to metadata extraction from human-modeled triangle meshes. It meticulously identifies key features such as entry/exit points, navigation lines, and structural frameworks. This process equips designers with a comprehensive understanding of each geometric element’s design and potential function within the environment. The second algorithm introduces mesh deformation capabilities, considering the structural characteristics of each element. This adaptation allows for versatile topological modifications, reducing the reliance on extensive artistic input and streamlining the component adaptation process. The final algorithm focuses on integrating these geometric elements into a user-defined graph. This graph, formed of 3D points interconnected by probabilistic links, acts as the foundational blueprint for environment assembly. It aligns the geometric elements to ensure spatial coherence and structural integrity within the generated environment. Collectively, these algorithms represent an advancement in early-stage game environment design, emphasizing ease of use and minimal integration effort, they offer designers an ideation and prototyping tool.",
+        "palavras_chave": [
+            "Geração Procedimental de Conteúdos; Jogos; design de níveis; geometria computacional; jogos digitais."
+        ],
+        "areas": [
+            "Computação Gráfica",
+            "Geometria Computacional",
+            "Geração Procedimental de Conteúdo",
+            "Inteligência Artificial."
+        ],
+        "tecnologias_usadas": [
+            "C#",
+            "Unity."
+        ],
+        "link_pdf": "",
+        "imagem": "https://teses.deisi.ulusofona.pt/media/teses/sample7.png",
+        "rating": 9
+    },
+    {
+        "titulo": "IT security for an end user in an IoT structure",
+        "alunos": "Silvana Chagas",
+        "orientador": "Nuno Ricardo Mateus Coelho",
+        "ano": "2025",
+        "licenciatura": "Não encontrado",
+        "email": "a22404428@alunos.ulht.pt",
+        "resumo": "The macro question of the research proposal is to provide security computing on IoT devices in a home ecosystem, under the supervision from your Internet Service Provider (ISP). To this end, the ISP must have technical conditions to monitor the IoT device. However, the client of this ISP does not accept access to the device. afraid that the ISP will access the private and private data that the device IoT may contain. Between the two, client and ISP, there may be a possible attack due to, for example, to a vulnerability that is unknown to the customer and that the ISP can to fight. This dilemma between the parties is current and needs to be investigated to propose ways to access the IoT device by the ISP for the purposes of: – monitoring a possible attack, – vulnerability analysis and – mitigation in the event of a security breach that may compromise, in addition to the client's other IT and/or IoT equipment, the ISP IT infrastructure.",
+        "palavras_chave": [
+            "ISP; IoT; Segurança em redes; ameaça; doméstico; smart homes; vulnerabilidade."
+        ],
+        "areas": [
+            "Cibersegurança",
+            "Segurança Informática."
+        ],
+        "tecnologias_usadas": [
+            "AWS",
+            "Android",
+            "Arduino",
+            "Azure",
+            "IPSEC",
+            "IPv6",
+            "Maltego",
+            "Python",
+            "Shodan."
+        ],
+        "link_pdf": "",
+        "imagem": "https://teses.deisi.ulusofona.pt/media/teses/image_9.png",
+        "rating": 6
+    },
+    {
+        "titulo": "LLM-Based Clustering of Text Documents",
+        "alunos": "Alina Petukhova",
+        "orientador": "João P. Matos-Carvalho, Nuno Fachada",
+        "ano": "2025",
+        "licenciatura": "Não encontrado",
+        "email": "petukhova.alina@gmail.com",
+        "resumo": "This thesis presents a comprehensive approach to text clustering, an important technique for organising and analysing large volumes of textual data. It begins by introducing the TextCL package, which provides advanced text preprocessing and novel outlier detection methods not previously available in Python, thereby enhancing the quality of input data for various Natural Language Processing (NLP) tasks. The study then proceeds with creating the Multilabelled News Dataset (MN-DS) dataset, which illustrates the effective application of the text clustering pipeline on a custom, manually labelled dataset. This dataset also serves as an essential benchmark for news clustering, allowing for an exploration of the hierarchical nature of the labels and their impact on clustering results. Finally, the thesis compares traditional text embeddings like Term Frequency – Inverse Document Frequency (TFIDF) and Bidirectional Encoder Representations from Transformers (BERT)-family embeddings with those generated by Large Language Models (LLMs). Extensive experiments across multiple text datasets show that LLM embeddings significantly improve the capture of semantic relationships within documents, resulting in more accurate and meaningful clustering outcomes. However, the findings indicate that techniques such as increasing model dimensionality and applying summarisation do not always enhance clustering efficiency, emphasising the need for careful consideration in practical applications. This research contributes to fields such as topic modelling and information retrieval by providing a robust framework for text clustering using state-of-the-art embedding techniques.",
+        "palavras_chave": [
+            "Natural Language Processing; Text clustering; Large Language Models; Outlier detection; Text preprocessing."
+        ],
+        "areas": [
+            "Ciência de Dados e Inteligência Artificial."
+        ],
+        "tecnologias_usadas": [
+            "Deep learning",
+            "Python."
+        ],
+        "link_pdf": "",
+        "imagem": "https://teses.deisi.ulusofona.pt/media/teses/front4.png",
+        "rating": 9
+    },
+    {
+        "titulo": "Medical Image Segmentation for Edge Device Deployment Using Compression Techniques.",
+        "alunos": "Preyesse Arquissandás",
+        "orientador": "João P. Matos-Carvalho, Sérgio Duarte, Tiago Reis",
+        "ano": "2025",
+        "licenciatura": "Não encontrado",
+        "email": "preyesse.arquissandas@ulht.pt",
+        "resumo": "Apply Deep learning techniques to improve image segmentation tasks and model deployment into resource-constrained devices.",
+        "palavras_chave": [
+            "Compression; Deep Learning; Edge Computing; Image Segmentation; Pruning; Quantization."
+        ],
+        "areas": [
+            "Computer Vision",
+            "saúde."
+        ],
+        "tecnologias_usadas": [
+            "Arduino",
+            "Bases de Dados",
+            "Deep learning",
+            "ESP8266",
+            "Machine Learning",
+            "Matplotlib",
+            "NumPy",
+            "Pandas",
+            "PyTorch",
+            "Python",
+            "SQLite",
+            "Sklearn",
+            "TensorFlow",
+            "Windows."
+        ],
+        "link_pdf": "",
+        "imagem": "https://teses.deisi.ulusofona.pt/media/teses/image.png",
+        "rating": 6
+    },
+    {
+        "titulo": "Patient-Centered Healthcare: A Framework for Analyzing Patient Feedback through Sentiment Analysis and Topic Modeling",
+        "alunos": "Luis Osório",
+        "orientador": "Nuno Ricardo Mateus Coelho",
+        "ano": "2025",
+        "licenciatura": "Não encontrado",
+        "email": "luis.osorio@ontop.pt",
+        "resumo": "Patient feedback is a crucial component in identifying areas of improvement and enhancing service quality in healthcare. However, manual analysis of a large volume of reviews is challenging. This paper proposes a novel framework and software for sentiment analysis and topic modeling with the goal of automating this process, providing a more efficient method for data extraction and facilitating informed decision-making. The Google reviews dataset, a rich source of patient feedback, is used for this purpose. We present findings from related research to identify potential strategies for implementing this framework. The ultimate goal is to understand patient sentiments, identify common complaint topics, and highlight positive aspects of healthcare centers. This approach will provide valuable insights that are essential for the continuous improvement and success of healthcare centers.",
+        "palavras_chave": [
+            "Doutoramento em informática – novos media e sistemas ubíquos."
+        ],
+        "areas": [
+            "Ciência de Dados e Inteligência Artificial."
+        ],
+        "tecnologias_usadas": [
+            "Python."
+        ],
+        "link_pdf": "",
+        "imagem": "https://teses.deisi.ulusofona.pt/media/teses/233E8CE6-254B-4BCD-8252-F65A3C042669.png",
+        "rating": 9
+    },
+    {
+        "titulo": "Simulation of Cyber Attacks in Industrial Control Systems Using Generative AI and Development of Anomaly Detection Mechanisms with Federated Learning",
+        "alunos": "Veysel Alevcan",
+        "orientador": "Luís Miguel Campos",
+        "ano": "2025",
+        "licenciatura": "Não encontrado",
+        "email": "valevcan@gmail.com",
+        "resumo": "This doctoral thesis focuses on enhancing the security of Supervisory Control and Data Acquisition (SCADA) systems within Industrial Control Systems (ICS) by simulating cyber attacks using Generative AI and developing anomaly detection mechanisms based on Federated Learning (FL). The study generates synthetic yet realistic cyber attacks using generative models (e.g., GANs, LLMs) and trains decentralized, privacy-preserving anomaly detection models across different SCADA process segments. The proposed approach is evaluated using open-source datasets (SWaT,), employing a process-based FL architecture. The results demonstrate that Federated Learning can effectively detect anomalies while preserving data privacy, offering a robust framework for enhancing SCADA system security.",
+        "palavras_chave": [
+            "Cybersecurity; Data Analysis; Inteligência Artificial; IoT; Machine Learning em tempo real."
+        ],
+        "areas": [
+            "Artificial Intelligence",
+            "Segurança Informática."
+        ],
+        "tecnologias_usadas": [
+            "Deep learning",
+            "Machine Learning",
+            "Matlab",
+            "Matplotlib",
+            "Python",
+            "TensorFlow."
+        ],
+        "link_pdf": "",
+        "imagem": "https://teses.deisi.ulusofona.pt/media/teses/f1_comparison.png",
+        "rating": 9
+    },
+    {
+        "titulo": "Simultaneous Wireless Information and Power Transfer",
+        "alunos": "Vishalya Panchalinee Sooriarachchi",
+        "orientador": "Jayakody Arachchilage Dushantha Nalin Kumara, Marko Beko",
+        "ano": "2025",
+        "licenciatura": "Não encontrado",
+        "email": "a22211643@alunos.ulht.pt",
+        "resumo": "The research focus on advancing the implementation and performance metrics of simultaneous wireless information and power transfer, by considering approaches to improve the duality of the system. Achieving maximum energy harvesting and reliable information decoding in various indoor and outdoor environments is stipulated. Also, the research expects to introduce suitable modulation techniques that would improve the overall performance of SWIPT.",
+        "palavras_chave": [
+            "Simultaneous wireless information and power transfer; UnmannedAerialVehicle (UAV)."
+        ],
+        "areas": [
+            "Telecomunicações",
+            "Wireless communication."
+        ],
+        "tecnologias_usadas": [
+            "Matlab."
+        ],
+        "link_pdf": "",
+        "imagem": "https://teses.deisi.ulusofona.pt/media/teses/20250508_0926_Wireless_Power_Transfer_simple_compose_01jtqchrf6em2bnxfksn34mnre.png",
+        "rating": 9
+    },
+    {
+        "titulo": "Terrestrial-Underwater Wireless Communication Networks with Self-Energized UAVs Utilizing THz/VLC for Enhanced Connectivity",
+        "alunos": "Hanojhan Rajahrajasingh",
+        "orientador": "Jayakody Arachchilage Dushantha Nalin Kumara, Marko Beko",
+        "ano": "2025",
+        "licenciatura": "Não encontrado",
+        "email": "hanojhansingh@gmail.com",
+        "resumo": "This research proposes a sustainable, high-speed communication framework using UAV-assisted hybrid Terahertz (THz) and Visible Light Communication (VLC) technologies for integrated terrestrial and underwater wireless networks. Leveraging UAVs as mobile relays, the system overcomes distance and attenuation constraints of THz and VLC links, ensuring robust connectivity across air, surface, and submerged environments. A novel dual-color OOK modulation scheme is introduced to enhance transmission efficiency, particularly for underwater VLC links where range and scattering pose unique challenges. The project further incorporates Simultaneous Lightwave Information and Power Transfer (SLIPT) and nonlinear energy harvesting models to enable autonomous UAV and surface relay operations. Performance will be evaluated through analytical modeling and simulation, focusing on BER, outage probability, and energy optimization. This work addresses pressing challenges in environmental monitoring, oceanic exploration, and emergency communications, contributing to the development of next-generation sustainable, self-powered, and high-data-rate communication systems.",
+        "palavras_chave": [
+            "Autonomous Underwater Vehicle (AUV); Drone; UnderwaterWireless Optical Communications(UWOC); UnmannedAerialVehicle (UAV)."
+        ],
+        "areas": [
+            "Wireless communication."
+        ],
+        "tecnologias_usadas": [
+            "Matlab."
+        ],
+        "link_pdf": "",
+        "imagem": "https://teses.deisi.ulusofona.pt/media/teses/PhDSM.JPG",
+        "rating": 9
+    },
+    {
+        "titulo": "The Role of Presence in Fostering Empathy in Virtual Environments",
+        "alunos": "Maria Costa",
+        "orientador": "Micaela Fonseca, Phil Lopes",
+        "ano": "2025",
+        "licenciatura": "Não encontrado",
+        "email": "f7957@ulusofona.pt",
+        "resumo": "Virtual environments (VEs) are powerful tools, widely used in computer engineering, not just to engage users, but to transform how people learn, feel, and act. This technology offers a bold new way to foster empathy and drive pro-environmental behavior. Yet, one critical factor remains underexplored: the role of presence in shaping these emotional and behavioral outcomes. This project investigates how varying levels of presence in VEs affect empathy, focusing on sharks and marine conservation. In collaboration with marine biology experts for scientific accuracy, simulations will be created with different degrees of immersion by altering realism and interactivity levels (2D, 3D, Virtual Reality, Immersive Virtual Reality) By analyzing how these factors impact empathetic responses, the study aims to uncover key design principles. The results will help create experiences that encourage meaningful learning and inspire real-world change.",
+        "palavras_chave": [
+            "Empatia; Presença; Realidade virtual; Simulação."
+        ],
+        "areas": [
+            "Virtual Reality."
+        ],
+        "tecnologias_usadas": [
+            "Unity."
+        ],
+        "link_pdf": "",
+        "imagem": "https://teses.deisi.ulusofona.pt/media/teses/Creative-Technology-girl-wearing-VR-Goggles.png",
+        "rating": 6
+    },
+    {
+        "titulo": "Towards Autonomous and Trustworthy Vehicle Navigation in GNSS-denied Environments",
+        "alunos": "Ricardo Serras Santos",
+        "orientador": "João P. Matos-Carvalho, Marko Beko, Slaviša Tomić",
+        "ano": "2025",
+        "licenciatura": "Não encontrado",
+        "email": "ricardo.santos@ulusofona.pt",
+        "resumo": "Autonomous navigation of vehicles is a hot topic in the science community and is expected to be achieved in the near future. However, the majority of current commercial vehicles (terrestrial or aerial) depend mainly on satellite signals to estimate their position. Thus, in scenarios where these signals are unavailable, the vehicle may not be able to estimate its position, possibly resulting in severe accidents with high material cost and perhaps casualties. Thus, this research’s main objective is to go beyond the state-of-the-art (SotA) and develop algorithms capable of navigating vehicles in real-time in complex scenarios with high accuracy and trustworthiness. To do so, vehicles will be exploited as sensing platforms to maximize the acquired information about an environment of interest, resorting to both on-board sensing sources and (in)direct communication with other nearby vehicles and/or infrastructure.",
+        "palavras_chave": [
+            "Autonomous Navigation."
+        ],
+        "areas": [
+            "Artificial Intelligence."
+        ],
+        "tecnologias_usadas": [
+            "C++",
+            "Machine Learning",
+            "Python."
+        ],
+        "link_pdf": "",
+        "imagem": "https://teses.deisi.ulusofona.pt/media/teses/Lusofona_12.jpg",
+        "rating": 9
+    },
+    {
+        "titulo": "Towards a Trustworthy Conversational AI for Cybersecurity: A Proposal for a Knowledge-Augmented Architecture",
+        "alunos": "André Filipe Marques Costa",
+        "orientador": "N/A",
+        "ano": "2025",
+        "licenciatura": "Não encontrado",
+        "email": "afmcosta@gmail.com",
+        "resumo": "Cybersecurity threats are increasingly frequent and complex, yet the average user and even IT professionals often lack timely and accurate guidance during an incident. General-purpose chatbots powered by large language models (LLMs) offer impressive general knowledge capabilities but fall short in providing domain-specific, contextual, and trustworthy responses during security events. This thesis proposes the development of a conversational AI system, specialized in cybersecurity, capable of offering real-time, actionable responses based on a validated and dynamic knowledge base. The system will integrate retrieval-augmented generation (RAG), expert-curated playbooks, and contextual inference to assist users in detecting, understanding, and mitigating cyber threats.",
+        "palavras_chave": [
+            "Inteligência Artificial; LLM; Privacidade e segurança dos dados."
+        ],
+        "areas": [
+            "Artificial Intelligence",
+            "Segurança Informática."
+        ],
+        "tecnologias_usadas": [
+            "Python."
+        ],
+        "link_pdf": "",
+        "imagem": "https://teses.deisi.ulusofona.pt/media/teses/image_FJeFzRp.jpg",
+        "rating": 9
+    }
+]
