@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faculdade - Meu Portefólio</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'portefolio_app/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'portefolio_app/css/style.css' %}?v=1.1">
     <style>
         .faculdade-container {
             display: flex;
@@ -79,12 +79,12 @@
         <h2>Área Académica</h2>
         
         <div class="faculdade-container">
-            <a href="#" class="faculdade-card">
+            <a href="{% url 'portefolio_app:ucs' %}" class="faculdade-card">
                 <img src="{% static 'portefolio_app/images/icons/uc.gif' %}" alt="Unidades Curriculares">
                 <span>Unidades Curriculares</span>
             </a>
             
-            <a href="#" class="faculdade-card">
+            <a href="{% url 'portefolio_app:docentes' %}" class="faculdade-card">
                 <img src="{% static 'portefolio_app/images/icons/docente.gif' %}" alt="Docentes">
                 <span>Docentes</span>
             </a>

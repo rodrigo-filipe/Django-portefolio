@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Tecnologia
+from .models import Tecnologia, Docente, UnidadeCurricular
 
 # Create your views here.
 
@@ -22,3 +22,19 @@ def contacto(request):
 
 def faculdade(request):
     return render(request, 'faculdade.html')
+
+def docentes(request):
+    docentes = Docente.objects.all()
+    return render(request, 'docentes.html', {'docentes': docentes})
+
+def docente_detalhe(request, pk):
+    docente = get_object_or_404(Docente, pk=pk)
+    return render(request, 'docente_detalhe.html', {'docente': docente})
+
+def ucs(request):
+    ucs = UnidadeCurricular.objects.all().order_by('ano', 'semestre')
+    return render(request, 'unidades_curriculares.html', {'ucs': ucs})
+
+def uc_detalhe(request, pk):
+    uc = get_object_or_404(UnidadeCurricular, pk=pk)
+    return render(request, 'unidade_curricular_detalhe.html', {'uc': uc})

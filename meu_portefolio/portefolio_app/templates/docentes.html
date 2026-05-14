@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docentes - Meu Portefólio</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portefolio_app/css/style.css' %}?v=1.1">
+</head>
+<body>
+    <header>
+        <h1>Meu Portefólio</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="{% url 'portefolio_app:home' %}"><img src="{% static 'portefolio_app/images/icons/home.gif' %}" alt="Home" class="nav-icon"> Home</a></li>
+                <li><a href="{% url 'portefolio_app:projects' %}"><img src="{% static 'portefolio_app/images/icons/projetos.gif' %}" alt="Projetos" class="nav-icon"> Projetos</a></li>
+                <li><a href="{% url 'portefolio_app:technologies' %}"><img src="{% static 'portefolio_app/images/icons/tecnologias.gif' %}" alt="Tecnologias" class="nav-icon"> Tecnologias</a></li>
+                <li><a href="{% url 'portefolio_app:faculdade' %}"><img src="{% static 'portefolio_app/images/icons/faculdade.gif' %}" alt="Faculdade" class="nav-icon"> Faculdade</a></li>
+                <li><a href="{% url 'portefolio_app:contact' %}"><img src="{% static 'portefolio_app/images/icons/contacto.gif' %}" alt="Contacto" class="nav-icon"> Contacto</a></li>
+                <li><a href="/admin/" class="admin-link"><img src="{% static 'portefolio_app/images/icons/admin.gif' %}" alt="Admin" class="nav-icon"> Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h2>Corpo Docente</h2>
+        
+        <div class="tech-list-vertical">
+            {% for docente in docentes %}
+            <a href="{% url 'portefolio_app:docente_detail' docente.pk %}" class="tech-card-link">
+                <div class="tech-card-horizontal">
+                    <div class="tech-card-section tech-img-section">
+                        {% if docente.foto %}
+                        <img src="{{ docente.foto.url }}" alt="{{ docente.nome }}" class="tech-logo-mini">
+                        {% else %}
+                        <div class="tech-logo-placeholder-mini">{{ docente.nome|first }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="tech-card-section tech-name-section">
+                        <span class="tech-label-title">Nome</span>
+                        <span class="tech-value">{{ docente.nome }}</span>
+                    </div>
+                </div>
+            </a>
+            {% empty %}
+            <p>Nenhum docente registado ainda.</p>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>
