@@ -16,7 +16,7 @@ cd C:\Users\PC\Desktop\meu_portefolio
 3 - Entrar no venv (virtual enviroment)
 
 ```
-venv\Scripts\activate
+source venv/bin/activate
 ```
 
 Sabe que o comando correu bem quando aparece (venv) antes da pasta onde está a trabalhar

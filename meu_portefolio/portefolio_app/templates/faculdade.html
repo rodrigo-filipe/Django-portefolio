@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculdade - Meu Portefólio</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portefolio_app/css/style.css' %}">
+    <style>
+        .faculdade-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .faculdade-card {
+            background-color: #000000;
+            border: 2px solid #00ff2a;
+            border-radius: 15px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .faculdade-card:hover {
+            background-color: #00ff2a;
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 255, 42, 0.3);
+        }
+
+        .faculdade-card img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            background-color: #1a1a1a;
+            padding: 10px;
+        }
+
+        .faculdade-card:hover img {
+            background-color: #000;
+        }
+
+        .faculdade-card span {
+            display: block;
+            color: #00ff2a;
+            font-size: 20px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .faculdade-card:hover span {
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meu Portefólio</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="{% url 'portefolio_app:home' %}"><img src="{% static 'portefolio_app/images/icons/home.gif' %}" alt="Home" class="nav-icon"> Home</a></li>
+                <li><a href="{% url 'portefolio_app:projects' %}"><img src="{% static 'portefolio_app/images/icons/projetos.gif' %}" alt="Projetos" class="nav-icon"> Projetos</a></li>
+                <li><a href="{% url 'portefolio_app:technologies' %}"><img src="{% static 'portefolio_app/images/icons/tecnologias.gif' %}" alt="Tecnologias" class="nav-icon"> Tecnologias</a></li>
+                <li><a href="{% url 'portefolio_app:faculdade' %}"><img src="{% static 'portefolio_app/images/icons/faculdade.gif' %}" alt="Faculdade" class="nav-icon"> Faculdade</a></li>
+                <li><a href="{% url 'portefolio_app:contact' %}"><img src="{% static 'portefolio_app/images/icons/contacto.gif' %}" alt="Contacto" class="nav-icon"> Contacto</a></li>
+                <li><a href="/admin/" class="admin-link"><img src="{% static 'portefolio_app/images/icons/admin.gif' %}" alt="Admin" class="nav-icon"> Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h2>Área Académica</h2>
+        
+        <div class="faculdade-container">
+            <a href="#" class="faculdade-card">
+                <img src="{% static 'portefolio_app/images/icons/uc.gif' %}" alt="Unidades Curriculares">
+                <span>Unidades Curriculares</span>
+            </a>
+            
+            <a href="#" class="faculdade-card">
+                <img src="{% static 'portefolio_app/images/icons/docente.gif' %}" alt="Docentes">
+                <span>Docentes</span>
+            </a>
+            
+            <a href="#" class="faculdade-card">
+                <img src="{% static 'portefolio_app/images/icons/tfc.gif' %}" alt="TFCs">
+                <span>TFC's</span>
+            </a>
+        </div>
+    </main>
+</body>
+</html>

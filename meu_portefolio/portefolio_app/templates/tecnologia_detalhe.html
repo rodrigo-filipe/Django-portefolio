@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ tecnologia.nome }} - Detalhes</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portefolio_app/css/style.css' %}?v=1.1">
+</head>
+<body>
+    <header>
+        <h1>Meu Portefólio</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="{% url 'portefolio_app:home' %}"><img src="{% static 'portefolio_app/images/icons/home.gif' %}" alt="Home" class="nav-icon"> Home</a></li>
+                <li><a href="{% url 'portefolio_app:projects' %}"><img src="{% static 'portefolio_app/images/icons/projetos.gif' %}" alt="Projetos" class="nav-icon"> Projetos</a></li>
+                <li><a href="{% url 'portefolio_app:technologies' %}"><img src="{% static 'portefolio_app/images/icons/tecnologias.gif' %}" alt="Tecnologias" class="nav-icon"> Tecnologias</a></li>
+                <li><a href="{% url 'portefolio_app:faculdade' %}"><img src="{% static 'portefolio_app/images/icons/faculdade.gif' %}" alt="Faculdade" class="nav-icon"> Faculdade</a></li>
+                <li><a href="{% url 'portefolio_app:contact' %}"><img src="{% static 'portefolio_app/images/icons/contacto.gif' %}" alt="Contacto" class="nav-icon"> Contacto</a></li>
+                <li><a href="/admin/" class="admin-link"><img src="{% static 'portefolio_app/images/icons/admin.gif' %}" alt="Admin" class="nav-icon"> Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="detail-container">
+            <div class="detail-header">
+                {% if tecnologia.logo %}
+                <img src="{{ tecnologia.logo.url }}" alt="{{ tecnologia.nome }}" class="tech-logo-detail">
+                {% endif %}
+                <h2>{{ tecnologia.nome }}</h2>
+            </div>
+            
+            <div class="detail-content">
+                <p class="tech-category"><strong>Categoria:</strong> {{ tecnologia.categoria }}</p>
+                <div class="tech-rating-detail">
+                    {% for i in "12345"|make_list %}
+                        {% if forloop.counter <= tecnologia.nivel_interesse %}
+                            ★
+                        {% else %}
+                            ☆
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="tech-description-box">
+                    <h3>Descrição</h3>
+                    <p>{{ tecnologia.descricao|linebreaks }}</p>
+                </div>
+                
+                {% if tecnologia.site_oficial %}
+                <div class="tech-action">
+                    <a href="{{ tecnologia.site_oficial }}" target="_blank" class="btn-primary">Visitar Site Oficial</a>
+                </div>
+                {% endif %}
+                
+                <div class="back-link">
+                    <a href="{% url 'portefolio_app:technologies' %}">← Voltar para a lista</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

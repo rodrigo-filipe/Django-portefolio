@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tecnologias - Meu Portefólio</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'portefolio_app/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'portefolio_app/css/style.css' %}?v=1.1">
 </head>
 <body>
     <header>
@@ -15,6 +15,7 @@
                 <li><a href="{% url 'portefolio_app:home' %}"><img src="{% static 'portefolio_app/images/icons/home.gif' %}" alt="Home" class="nav-icon"> Home</a></li>
                 <li><a href="{% url 'portefolio_app:projects' %}"><img src="{% static 'portefolio_app/images/icons/projetos.gif' %}" alt="Projetos" class="nav-icon"> Projetos</a></li>
                 <li><a href="{% url 'portefolio_app:technologies' %}"><img src="{% static 'portefolio_app/images/icons/tecnologias.gif' %}" alt="Tecnologias" class="nav-icon"> Tecnologias</a></li>
+                <li><a href="{% url 'portefolio_app:faculdade' %}"><img src="{% static 'portefolio_app/images/icons/faculdade.gif' %}" alt="Faculdade" class="nav-icon"> Faculdade</a></li>
                 <li><a href="{% url 'portefolio_app:contact' %}"><img src="{% static 'portefolio_app/images/icons/contacto.gif' %}" alt="Contacto" class="nav-icon"> Contacto</a></li>
                 <li><a href="/admin/" class="admin-link"><img src="{% static 'portefolio_app/images/icons/admin.gif' %}" alt="Admin" class="nav-icon"> Admin</a></li>
             </ul>
@@ -23,7 +24,44 @@
     
     <main>
         <h2>Minhas Tecnologias</h2>
-        <p>Esta é a página de tecnologias. Em breve aqui estarão todas as tecnologias que domino!</p>
+        
+        <div class="tech-list-vertical">
+            {% for tech in tecnologias %}
+            <a href="{% url 'portefolio_app:technology_detail' tech.pk %}" class="tech-card-link">
+                <div class="tech-card-horizontal">
+                    <div class="tech-card-section tech-img-section">
+                        {% if tech.logo %}
+                        <img src="{{ tech.logo.url }}" alt="{{ tech.nome }}" class="tech-logo-mini">
+                        {% else %}
+                        <div class="tech-logo-placeholder-mini">{{ tech.nome|first }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="tech-card-section tech-name-section">
+                        <span class="tech-label-title">Nome</span>
+                        <span class="tech-value">{{ tech.nome }}</span>
+                    </div>
+                    <div class="tech-card-section tech-category-section">
+                        <span class="tech-label-title">Categoria</span>
+                        <span class="tech-value">{{ tech.categoria }}</span>
+                    </div>
+                    <div class="tech-card-section tech-rating-section">
+                        <span class="tech-label-title">Rating</span>
+                        <span class="tech-rating">
+                            {% for i in "12345"|make_list %}
+                                {% if forloop.counter <= tech.nivel_interesse %}
+                                    ★
+                                {% else %}
+                                    ☆
+                                {% endif %}
+                            {% endfor %}
+                        </span>
+                    </div>
+                </div>
+            </a>
+            {% empty %}
+            <p>Nenhuma tecnologia registada ainda.</p>
+            {% endfor %}
+        </div>
     </main>
 </body>
 </html>
