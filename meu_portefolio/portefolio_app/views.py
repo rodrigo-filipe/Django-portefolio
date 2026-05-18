@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Tecnologia, Docente, UnidadeCurricular
+from django.contrib.auth.decorators import login_required
+from .models import Tecnologia, Docente, UnidadeCurricular, Projeto
 
 # Create your views here.
 
@@ -7,7 +8,12 @@ def home(request):
     return render(request, 'home.html')
 
 def projetos(request):
-    return render(request, 'projetos.html')
+    projetos = Projeto.objects.all()
+    return render(request, 'projetos.html', {'projetos': projetos})
+
+def projeto_detalhe(request, pk):
+    projeto = get_object_or_404(Projeto, pk=pk)
+    return render(request, 'projeto_detalhe.html', {'projeto': projeto})
 
 def tecnologias(request):
     tecnologias = Tecnologia.objects.all()

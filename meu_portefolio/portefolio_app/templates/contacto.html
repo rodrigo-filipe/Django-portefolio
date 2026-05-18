@@ -5,21 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - Meu Portefólio</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'portefolio_app/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'portefolio_app/css/style.css' %}?v=2.0">
 </head>
 <body>
     <header>
-        <h1>Meu Portefólio</h1>
-        <nav class="navbar">
-            <ul>
-                <li><a href="{% url 'portefolio_app:home' %}"><img src="{% static 'portefolio_app/images/icons/home.gif' %}" alt="Home" class="nav-icon"> Home</a></li>
-                <li><a href="{% url 'portefolio_app:projects' %}"><img src="{% static 'portefolio_app/images/icons/projetos.gif' %}" alt="Projetos" class="nav-icon"> Projetos</a></li>
-                <li><a href="{% url 'portefolio_app:technologies' %}"><img src="{% static 'portefolio_app/images/icons/tecnologias.gif' %}" alt="Tecnologias" class="nav-icon"> Tecnologias</a></li>
-                <li><a href="{% url 'portefolio_app:faculdade' %}"><img src="{% static 'portefolio_app/images/icons/faculdade.gif' %}" alt="Faculdade" class="nav-icon"> Faculdade</a></li>
-                <li><a href="{% url 'portefolio_app:contact' %}"><img src="{% static 'portefolio_app/images/icons/contacto.gif' %}" alt="Contacto" class="nav-icon"> Contacto</a></li>
-                <li><a href="/admin/" class="admin-link"><img src="{% static 'portefolio_app/images/icons/admin.gif' %}" alt="Admin" class="nav-icon"> Admin</a></li>
-            </ul>
-        </nav>
+        <div class="header-top">
+            <h1>Meu Portefólio</h1>
+            <div class="user-auth">
+                {% if user.is_authenticated %}
+                    <span>Olá, {{ user.username }}</span>
+                    <a href="{% url 'accounts:logout' %}">Logout</a>
+                {% else %}
+                    <a href="{% url 'accounts:login' %}">Login</a>
+                    <a href="{% url 'accounts:register' %}">Sign In</a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="header-bottom">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="{% url 'portefolio_app:home' %}"><img src="{% static 'portefolio_app/images/icons/home.gif' %}" alt="Home" class="nav-icon"> Home</a></li>
+                    <li><a href="{% url 'portefolio_app:projects' %}"><img src="{% static 'portefolio_app/images/icons/projetos.gif' %}" alt="Projetos" class="nav-icon"> Projetos</a></li>
+                    <li><a href="{% url 'portefolio_app:technologies' %}"><img src="{% static 'portefolio_app/images/icons/tecnologias.gif' %}" alt="Tecnologias" class="nav-icon"> Tecnologias</a></li>
+                    <li><a href="{% url 'portefolio_app:faculdade' %}"><img src="{% static 'portefolio_app/images/icons/faculdade.gif' %}" alt="Faculdade" class="nav-icon"> Faculdade</a></li>
+                    <li><a href="{% url 'portefolio_app:contact' %}"><img src="{% static 'portefolio_app/images/icons/contacto.gif' %}" alt="Contacto" class="nav-icon"> Contacto</a></li>
+                    <li><a href="/admin/" class="admin-link"><img src="{% static 'portefolio_app/images/icons/admin.gif' %}" alt="Admin" class="nav-icon"> Admin</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     
     <main>

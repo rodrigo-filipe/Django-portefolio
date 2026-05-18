@@ -38,7 +38,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'portefolio_app',
+    'accounts',
 ]
+
+# Authentication settings
+LOGIN_URL = 'accounts:login'
+LOGIN_REDIRECT_URL = 'portefolio_app:home'
+LOGOUT_REDIRECT_URL = 'portefolio_app:home'
+
+# Email backend for Magic Link (using console for development)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
