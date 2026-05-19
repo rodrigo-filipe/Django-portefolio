@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import (
-    Licenciatura, Docente, UnidadeCurricular, Tecnologia,
+    Licenciatura, Docente, UnidadeCurricular, Tecnologia, CategoriaTecnologia,
     Projeto, TFC, Competencia, Formacao, MakingOf
 )
 
@@ -34,12 +34,16 @@ class UnidadeCurricularAdmin(admin.ModelAdmin):
     get_docentes_count.short_description = 'Nº de Docentes'
 
 
+@admin.register(CategoriaTecnologia)
+class CategoriaTecnologiaAdmin(admin.ModelAdmin):
+    list_display = ['nome']
+
 @admin.register(Tecnologia)
 class TecnologiaAdmin(admin.ModelAdmin):
-    list_display = ['nome', 'categoria', 'nivel_interesse']
-    list_filter = ['categoria']
+    list_display = ['nome', 'categoria_relacionada', 'nivel_interesse']
+    list_filter = ['categoria_relacionada']
     search_fields = ['nome']
-    ordering = ['categoria', 'nome']
+    ordering = ['categoria_relacionada', 'nome']
 
 
 @admin.register(Projeto)

@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required, user_passes_test
-from .models import Tecnologia, Docente, UnidadeCurricular, Projeto, TFC
+from .models import Tecnologia, Docente, UnidadeCurricular, Projeto, TFC, MakingOf, CategoriaTecnologia
 from .forms import ProjetoForm, TecnologiaForm, UnidadeCurricularForm, DocenteForm, TFCForm
 
 def is_staff(user):
@@ -10,6 +10,18 @@ def is_staff(user):
 
 def home(request):
     return render(request, 'home.html')
+
+def sobre(request):
+    # Procuramos as tecnologias associadas a este projeto "Meu Portefólio"
+    # Assumindo que o projeto tem o título "Meu Portefólio" ou similar
+    projeto_portfolio = Projeto.objects.filter(titulo__icontains='Portefólio').first()
+    
+    context = {
+        'projeto': projeto_portfolio,
+        'categorias': CategoriaTecnologia.objects.all().prefetch_related('tecnologias'),
+        'making_ofs': MakingOf.objects.all().order_by('-data')
+    }
+    return render(request, 'sobre.html', context)
 
 def projetos(request):
     projetos = Projeto.objects.all()

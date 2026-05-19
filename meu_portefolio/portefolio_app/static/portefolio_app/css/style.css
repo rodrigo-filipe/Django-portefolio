@@ -694,3 +694,18 @@ a:hover {
 .video-embed-container {
     margin-top: 20px;
 }
+
+/* Making Of Table */
+.making-of-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.making-of-table th, .making-of-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+.making-of-table th {
+    background-color: #f8f9fa;
+}

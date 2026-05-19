@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre esta Aplicação - Meu Portefólio</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portefolio_app/css/style.css' %}?v=3.0">
+    <style>
+        .sobre-section { 
+            margin-bottom: 40px; 
+            padding: 30px; 
+            background: #1a1a1a; 
+            border-radius: 15px; 
+            border: 2px solid #00ff2a;
+            box-shadow: 0 0 15px rgba(0, 255, 42, 0.2);
+            color: white;
+        }
+        .sobre-section h3 { 
+            border-bottom: 2px solid #00ff2a; 
+            padding-bottom: 10px; 
+            margin-bottom: 20px; 
+            color: #00ff2a; 
+            text-align: left;
+        }
+        .tech-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+            gap: 20px; 
+        }
+        .tech-item { 
+            padding: 20px; 
+            border: 1px solid #00ff2a44; 
+            border-radius: 10px; 
+            background: #000;
+            transition: all 0.3s ease;
+        }
+        .tech-item:hover {
+            border-color: #00ff2a;
+            box-shadow: 0 0 10px rgba(0, 255, 42, 0.3);
+            transform: translateY(-5px);
+        }
+        .tech-item h5 { 
+            margin-top: 0; 
+            color: #00ff2a; 
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .making-of-table { 
+            width: 100%; 
+            border-collapse: separate; 
+            border-spacing: 0;
+            margin-top: 20px; 
+            border: 1px solid #00ff2a;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .making-of-table th, .making-of-table td { 
+            border: 1px solid #00ff2a33; 
+            padding: 15px; 
+            text-align: left; 
+        }
+        .making-of-table th { 
+            background-color: #00ff2a; 
+            color: #000;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .making-of-table tr:nth-child(even) {
+            background-color: #222;
+        }
+        .making-of-table tr:hover {
+            background-color: #00ff2a11;
+        }
+        .diagram-img { 
+            max-width: 100%; 
+            height: auto; 
+            border: 2px solid #00ff2a; 
+            border-radius: 8px;
+            display: block; 
+            margin: 20px auto; 
+        }
+        .video-container { 
+            position: relative; 
+            padding-bottom: 56.25%; 
+            height: 0; 
+            overflow: hidden; 
+            max-width: 100%; 
+            background: #000; 
+            margin: 25px 0; 
+            border: 2px solid #00ff2a;
+            border-radius: 10px;
+        }
+        .video-container iframe { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+        }
+        .code-block {
+            background: #000; 
+            padding: 20px; 
+            overflow-x: auto; 
+            border: 1px solid #00ff2a;
+            border-radius: 8px;
+            color: #00ff2a;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 20px 0;
+        }
+        strong {
+            color: #00ff2a;
+        }
+        .github-link-section {
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <h1>Meu Portefólio</h1>
+            <div class="user-auth">
+                {% if user.is_authenticated %}
+                    <span>Olá, {{ user.username }}</span>
+                    <a href="{% url 'accounts:logout' %}">Logout</a>
+                {% else %}
+                    <a href="{% url 'accounts:login' %}">Login</a>
+                    <a href="{% url 'accounts:register' %}">Sign In</a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="header-bottom">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="{% url 'portefolio_app:home' %}"><img src="{% static 'portefolio_app/images/icons/home.gif' %}" alt="Home" class="nav-icon"> Home</a></li>
+                    <li><a href="{% url 'portefolio_app:about' %}" class="active"><img src="{% static 'portefolio_app/images/icons/info.gif' %}" alt="Sobre" class="nav-icon"> Sobre</a></li>
+                    <li><a href="{% url 'portefolio_app:projects' %}"><img src="{% static 'portefolio_app/images/icons/projetos.gif' %}" alt="Projetos" class="nav-icon"> Projetos</a></li>
+                    <li><a href="{% url 'portefolio_app:technologies' %}"><img src="{% static 'portefolio_app/images/icons/tecnologias.gif' %}" alt="Tecnologias" class="nav-icon"> Tecnologias</a></li>
+                    <li><a href="{% url 'portefolio_app:faculdade' %}"><img src="{% static 'portefolio_app/images/icons/faculdade.gif' %}" alt="Faculdade" class="nav-icon"> Faculdade</a></li>
+                    <li><a href="{% url 'artigos:artigo_list' %}"><img src="{% static 'portefolio_app/images/icons/article.gif' %}" alt="Artigos" class="nav-icon"> Artigos</a></li>
+                    <li><a href="{% url 'portefolio_app:contact' %}"><img src="{% static 'portefolio_app/images/icons/contacto.gif' %}" alt="Contacto" class="nav-icon"> Contacto</a></li>
+                    {% if user.is_staff %}
+                        <li><a href="/admin/" class="admin-link"><img src="{% static 'portefolio_app/images/icons/admin.gif' %}" alt="Admin" class="nav-icon"> Admin</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section class="intro">
+            <h2>Sobre esta Aplicação</h2>
+            <p>Esta página descreve os detalhes técnicos, arquitetura e o processo de desenvolvimento deste portefólio.</p>
+        </section>
+
+        <!-- 1. Arquitetura MVT -->
+        <section class="sobre-section">
+            <h3>1. Arquitetura MVT do Django</h3>
+            <p>O Django utiliza o padrão de arquitetura <strong>MVT (Model-View-Template)</strong>, que é uma variação do MVC (Model-View-Controller).</p>
+            
+            <div class="architecture-content">
+                <p><strong>Desenho da Arquitetura (Papel e Lápis):</strong></p>
+                <img src="{% static 'portefolio_app/images/mvt_desenho.jpg' %}" alt="Desenho da Arquitetura MVT" class="diagram-img">
+                <p style="font-size: 0.9em; color: #888; font-style: italic; text-align: center;">Nota: Carregue a fotografia do seu desenho para a pasta static</p>
+
+                <ul>
+                    <li><strong>Model:</strong> Gere os dados e a lógica da base de dados. Define a estrutura das tabelas.</li>
+                    <li><strong>View:</strong> Contém a lógica de negócio. Recebe pedidos HTTP e decide que dados enviar para o Template.</li>
+                    <li><strong>Template:</strong> Define a camada de apresentação (HTML/CSS). É onde os dados são renderizados para o utilizador.</li>
+                </ul>
+                <p><strong>Fluxo:</strong> Pedido HTTP &rarr; URL Dispatcher &rarr; View &rarr; Model (opcional) &rarr; View &rarr; Template &rarr; Resposta HTTP.</p>
+            </div>
+
+            <h4>Vídeo Tutorial: Criação de Formulário de Projeto</h4>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <p style="font-size: 0.9em; color: #888; font-style: italic; text-align: center;">Substitua o ID no código do template pelo ID do seu vídeo tutorial</p>
+        </section>
+
+        <!-- 2. Modelação -->
+        <section class="sobre-section">
+            <h3>2. Modelação</h3>
+            <p>A estrutura de dados da aplicação baseia-se num Diagrama Entidade-Relação que define como as UCs, Projetos, Docentes e Tecnologias se interligam.</p>
+            
+            <h4>Diagrama Entidade-Relação (DER)</h4>
+            <img src="{% static 'portefolio_app/images/der_desenho.jpg' %}" alt="Diagrama Entidade Relação" class="diagram-img">
+
+            <h4>Implementação em models.py</h4>
+            <pre class="code-block">
+class Projeto(models.Model):
+    titulo = models.CharField(max_length=200, unique=True)
+    unidade_curricular = models.ForeignKey(UnidadeCurricular, on_delete=models.SET_NULL, null=True, blank=True)
+    descricao = models.TextField()
+    tecnologias = models.ManyToManyField(Tecnologia)
+    # ... outros campos</pre>
+        </section>
+
+        <!-- 3. Tecnologias -->
+        <section class="sobre-section">
+            <h3>3. Tecnologias</h3>
+            <div class="tech-grid">
+                {% for categoria in categorias %}
+                <div class="tech-category-group">
+                    <h4 style="color: #00ff2a; border-bottom: 1px solid #00ff2a33; padding-bottom: 5px; margin-bottom: 15px;">{{ categoria.nome }}</h4>
+                    {% for tech in categoria.tecnologias.all %}
+                    <div class="tech-item" style="margin-bottom: 15px;">
+                        <h5>{{ tech.nome }}</h5>
+                        <p style="text-align: left; font-size: 0.9em;"><strong>Descrição:</strong> {{ tech.descricao }}</p>
+                        <p style="text-align: left; font-size: 0.9em;"><strong>Gostei:</strong> {{ tech.aspectos_positivos }}</p>
+                        <p style="text-align: left; font-size: 0.9em;"><strong>Melhorar:</strong> {{ tech.aspectos_negativos }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% empty %}
+                <p>Configure as categorias e tecnologias no painel de administração.</p>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- 4. Estrutura das Páginas -->
+        <section class="sobre-section">
+            <h3>4. Estrutura das Páginas (Navegação)</h3>
+            <p>Mapa de navegação da aplicação, demonstrando a hierarquia das páginas.</p>
+            <img src="{% static 'portefolio_app/images/mapa_navegacao.jpg' %}" alt="Mapa de Navegação" class="diagram-img">
+        </section>
+
+        <!-- 5. Repositório GitHub -->
+        <section class="sobre-section">
+            <h3>5. Repositório GitHub</h3>
+            <p>O código fonte desta aplicação está disponível publicamente no GitHub.</p>
+            <div class="github-link-section">
+                <a href="https://github.com/rodrigo-filipe/Django-portefolio" target="_blank" class="btn-submit" style="text-decoration: none; display: inline-block;">Ver Repositório</a>
+            </div>
+            
+            <div style="margin-top: 25px; border-top: 1px solid #00ff2a33; padding-top: 20px;">
+                <p style="text-align: left;"><strong>Uso do Git/GitHub:</strong> Utilizado para controlo de versões, permitindo rastrear alterações, experimentar novas funcionalidades em branches e garantir a segurança do código na nuvem.</p>
+                <p style="text-align: left;"><strong>Vantagens:</strong> Colaboração facilitada, backup constante, e histórico de desenvolvimento detalhado.</p>
+            </div>
+        </section>
+
+        <!-- 6. Making-Of -->
+        <section class="sobre-section">
+            <h3>6. Making-Of</h3>
+            <p>Registo do processo de desenvolvimento, desafios encontrados e soluções aplicadas.</p>
+            
+            <div style="overflow-x: auto;">
+                <table class="making-of-table">
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Entidade</th>
+                            <th>Desafio/Erro</th>
+                            <th>Solução/Correção</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for mo in making_ofs %}
+                        <tr>
+                            <td>{{ mo.data|date:"d/m/Y" }}</td>
+                            <td>{{ mo.entidade_relacionada }}</td>
+                            <td><strong>{{ mo.titulo }}</strong><br><span style="font-size: 0.85em; color: #ccc;">{{ mo.descricao }}</span></td>
+                            <td>{{ mo.erro_correcao }}</td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="4" style="text-align: center;">Ainda não existem registos no Making-Of.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

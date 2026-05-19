@@ -2,8 +2,8 @@ from django.db import models
 from django.utils.timezone import now
 import datetime
 from django.core.validators import MinValueValidator, MaxValueValidator
-# Create your models here.
 
+# Create your models here.
 
 class Licenciatura(models.Model):
     nome = models.CharField(max_length=200)
@@ -11,7 +11,7 @@ class Licenciatura(models.Model):
     instituicao = models.CharField(max_length=200, default="Universidade Lusófona")
     descricao = models.TextField(blank=True)
     duracao_anos = models.PositiveIntegerField(default=3)
-    data_inicio = models.DateField(default= datetime.date.today)
+    data_inicio = models.DateField(default=datetime.date.today)
     lic_link = models.URLField(default="https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-informatica")
 
     def __str__(self):
@@ -23,17 +23,17 @@ class Docente(models.Model):
     email = models.EmailField(blank=True, null=True)
     pagina_pessoal = models.URLField(blank=True)
     foto = models.ImageField(upload_to='docentes/', blank=True, null=True)
-    
 
     def __str__(self):
         return self.nome
+
 
 class UnidadeCurricular(models.Model):
     nome = models.CharField(max_length=200)
     codigo = models.CharField(max_length=50, unique=True)
     licenciatura = models.ForeignKey(Licenciatura, on_delete=models.CASCADE, related_name='ucs', default=260)
-    ano = models.PositiveIntegerField(choices=[(1,1), (2,2), (3,3)])
-    semestre = models.PositiveIntegerField(choices=[(1,1), (2,2)])
+    ano = models.PositiveIntegerField(choices=[(1, 1), (2, 2), (3, 3)])
+    semestre = models.PositiveIntegerField(choices=[(1, 1), (2, 2)])
     ects = models.PositiveIntegerField(default=6)
     descricao = models.TextField(blank=True)
     imagem = models.ImageField(upload_to='ucs/', blank=True, null=True)
@@ -43,13 +43,23 @@ class UnidadeCurricular(models.Model):
         return f"{self.codigo} - {self.nome}"
 
 
+class CategoriaTecnologia(models.Model):
+    nome = models.CharField(max_length=100, unique=True) # Frontend, Backend, Base de Dados, Storage, Outros
+
+    def __str__(self):
+        return self.nome
+
 class Tecnologia(models.Model):
     nome = models.CharField(max_length=100, unique=True)
     logo = models.ImageField(upload_to='tecnologias/', blank=True, null=True)
     site_oficial = models.URLField(blank=True)
-    descricao = models.TextField(blank=True)
+    descricao = models.TextField(blank=True, help_text="O que esta tecnologia faz e permite")
+    aspectos_positivos = models.TextField(blank=True, help_text="Aspetos que gostou")
+    aspectos_negativos = models.TextField(blank=True, help_text="Aspetos que não gostou")
     nivel_interesse = models.PositiveIntegerField(default=3, validators=[MinValueValidator(1), MaxValueValidator(5)])
-    categoria = models.CharField(max_length=50)
+    categoria_relacionada = models.ForeignKey(CategoriaTecnologia, on_delete=models.SET_NULL, null=True, blank=True, related_name='tecnologias')
+    # Mantemos categoria como CharField por agora para não quebrar queries antigas até migração completa
+    categoria = models.CharField(max_length=50, blank=True) 
 
     def __str__(self):
         return self.nome
@@ -68,30 +78,12 @@ class Projeto(models.Model):
     def __str__(self):
         return self.titulo
 
-    @property
-    def youtube_embed_url(self):
-        if not self.video_demo:
-            return None
-        
-        # YouTube ID extraction logic
-        video_id = None
-        if 'youtube.com/watch?v=' in self.video_demo:
-            video_id = self.video_demo.split('v=')[1].split('&')[0]
-        elif 'youtu.be/' in self.video_demo:
-            video_id = self.video_demo.split('youtu.be/')[1].split('?')[0]
-        elif 'youtube.com/embed/' in self.video_demo:
-            video_id = self.video_demo.split('embed/')[1].split('?')[0]
-        
-        if video_id:
-            return f"https://www.youtube.com/embed/{video_id}"
-        return None
-
 
 class TFC(models.Model):
     titulo = models.CharField(max_length=300)
     alunos = models.CharField(max_length=300)
     orientador = models.CharField(max_length=200)
-    ano = models.IntegerField(default = 2025)
+    ano = models.IntegerField(default=2025)
     licenciatura = models.CharField(max_length=100)
     email = models.EmailField(blank=True, null=True)
     descricao = models.TextField()
@@ -104,8 +96,9 @@ class TFC(models.Model):
     def __str__(self):
         return self.titulo
 
+
 class Formacao(models.Model):
-    titulo = models.CharField(max_length=200, unique= True)
+    titulo = models.CharField(max_length=200, unique=True)
     instituicao = models.CharField(max_length=150)
     data_inicio = models.DateField()
     data_fim = models.DateField(null=True, blank=True)
@@ -117,17 +110,19 @@ class Formacao(models.Model):
 
     def __str__(self):
         return f"{self.titulo} - {self.instituicao}"
-    
+
+
 class Competencia(models.Model):
-    nome = models.CharField(max_length=150, unique= True)
+    nome = models.CharField(max_length=150, unique=True)
     descricao = models.TextField(blank=True)
-    nivel = models.PositiveIntegerField(choices=[(1,'Básico'), (2,'Intermédio'), (3,'Avançado')], default=2)
+    nivel = models.PositiveIntegerField(choices=[(1, 'Básico'), (2, 'Intermédio'), (3, 'Avançado')], default=2)
     projetos = models.ManyToManyField(Projeto, blank=True)
     tecnologias = models.ManyToManyField(Tecnologia, blank=True)
     formacoes = models.ManyToManyField(Formacao, blank=True)
 
     def __str__(self):
         return self.nome
+
 
 # === ENTIDADE OBRIGATÓRIA: MAKING OF ===
 class MakingOf(models.Model):

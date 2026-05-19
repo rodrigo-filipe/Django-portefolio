@@ -25,6 +25,7 @@
             <nav class="navbar">
                 <ul>
                     <li><a href="{% url 'portefolio_app:home' %}"><img src="{% static 'portefolio_app/images/icons/home.gif' %}" alt="Home" class="nav-icon"> Home</a></li>
+                    <li><a href="{% url 'portefolio_app:about' %}"><img src="{% static 'portefolio_app/images/icons/info.gif' %}" alt="Sobre" class="nav-icon"> Sobre</a></li>
                     <li><a href="{% url 'portefolio_app:projects' %}"><img src="{% static 'portefolio_app/images/icons/projetos.gif' %}" alt="Projetos" class="nav-icon"> Projetos</a></li>
                     <li><a href="{% url 'portefolio_app:technologies' %}"><img src="{% static 'portefolio_app/images/icons/tecnologias.gif' %}" alt="Tecnologias" class="nav-icon"> Tecnologias</a></li>
                     <li><a href="{% url 'portefolio_app:faculdade' %}"><img src="{% static 'portefolio_app/images/icons/faculdade.gif' %}" alt="Faculdade" class="nav-icon"> Faculdade</a></li>
@@ -99,18 +100,9 @@
                     {% endif %}
                     
                     {% if projeto.video_demo %}
-                        <a href="{{ projeto.video_demo }}" target="_blank" class="btn video-btn">Ver Link do Vídeo</a>
+                        <a href="{{ projeto.video_demo }}" target="_blank" class="btn video-btn">Ver Demonstração</a>
                     {% endif %}
                 </div>
-
-                {% if projeto.youtube_embed_url %}
-                <div class="tech-description-box video-embed-container">
-                    <h3>Vídeo de Demonstração</h3>
-                    <div class="video-responsive">
-                        <iframe width="560" height="315" src="{{ projeto.youtube_embed_url }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-                {% endif %}
                 
                 <div class="back-link">
                     <a href="{% url 'portefolio_app:projects' %}">&larr; Voltar para a lista</a>

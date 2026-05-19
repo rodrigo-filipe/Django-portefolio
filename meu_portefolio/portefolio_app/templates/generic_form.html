@@ -25,6 +25,7 @@
             <nav class="navbar">
                 <ul>
                     <li><a href="{% url 'portefolio_app:home' %}"><img src="{% static 'portefolio_app/images/icons/home.gif' %}" alt="Home" class="nav-icon"> Home</a></li>
+                    <li><a href="{% url 'portefolio_app:about' %}"><img src="{% static 'portefolio_app/images/icons/info.gif' %}" alt="Sobre" class="nav-icon"> Sobre</a></li>
                     <li><a href="{% url 'portefolio_app:projects' %}"><img src="{% static 'portefolio_app/images/icons/projetos.gif' %}" alt="Projetos" class="nav-icon"> Projetos</a></li>
                     <li><a href="{% url 'portefolio_app:technologies' %}"><img src="{% static 'portefolio_app/images/icons/tecnologias.gif' %}" alt="Tecnologias" class="nav-icon"> Tecnologias</a></li>
                     <li><a href="{% url 'portefolio_app:faculdade' %}"><img src="{% static 'portefolio_app/images/icons/faculdade.gif' %}" alt="Faculdade" class="nav-icon"> Faculdade</a></li>
@@ -44,6 +45,8 @@
         </section>
 
         <form method="post" enctype="multipart/form-data" class="generic-form">
+
+            ola
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit" class="btn-submit">Guardar</button>
