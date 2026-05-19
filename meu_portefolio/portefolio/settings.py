@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'portefolio_app',
     'accounts',
+    'artigos',
 ]
 
 # Authentication settings

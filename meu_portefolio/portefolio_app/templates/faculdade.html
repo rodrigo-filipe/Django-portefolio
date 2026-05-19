@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faculdade - Meu Portefólio</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'portefolio_app/css/style.css' %}?v=2.0">
+    <link rel="stylesheet" href="{% static 'portefolio_app/css/style.css' %}?v=3.0">
     <style>
         .faculdade-container {
             display: flex;
@@ -81,8 +81,11 @@
                     <li><a href="{% url 'portefolio_app:projects' %}"><img src="{% static 'portefolio_app/images/icons/projetos.gif' %}" alt="Projetos" class="nav-icon"> Projetos</a></li>
                     <li><a href="{% url 'portefolio_app:technologies' %}"><img src="{% static 'portefolio_app/images/icons/tecnologias.gif' %}" alt="Tecnologias" class="nav-icon"> Tecnologias</a></li>
                     <li><a href="{% url 'portefolio_app:faculdade' %}"><img src="{% static 'portefolio_app/images/icons/faculdade.gif' %}" alt="Faculdade" class="nav-icon"> Faculdade</a></li>
+                    <li><a href="{% url 'artigos:artigo_list' %}"><img src="{% static 'portefolio_app/images/icons/article.gif' %}" alt="Artigos" class="nav-icon"> Artigos</a></li>
                     <li><a href="{% url 'portefolio_app:contact' %}"><img src="{% static 'portefolio_app/images/icons/contacto.gif' %}" alt="Contacto" class="nav-icon"> Contacto</a></li>
-                    <li><a href="/admin/" class="admin-link"><img src="{% static 'portefolio_app/images/icons/admin.gif' %}" alt="Admin" class="nav-icon"> Admin</a></li>
+                    {% if user.is_staff %}
+                        <li><a href="/admin/" class="admin-link"><img src="{% static 'portefolio_app/images/icons/admin.gif' %}" alt="Admin" class="nav-icon"> Admin</a></li>
+                    {% endif %}
                 </ul>
             </nav>
         </div>
@@ -102,7 +105,7 @@
                 <span>Docentes</span>
             </a>
             
-            <a href="#" class="faculdade-card">
+            <a href="{% url 'portefolio_app:tfcs' %}" class="faculdade-card">
                 <img src="{% static 'portefolio_app/images/icons/tfc.gif' %}" alt="TFCs">
                 <span>TFC's</span>
             </a>

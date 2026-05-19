@@ -526,3 +526,171 @@ a:hover {
     margin-bottom: 40px;
 }
 
+/* Administrative Styles */
+.admin-actions {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.btn-admin {
+    display: inline-block;
+    background-color: #ff8787;
+    color: #000 !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    border: 2px solid #ff0000;
+}
+
+.btn-admin:hover {
+    background-color: #ff0000;
+    color: #fff !important;
+    box-shadow: 0 0 10px #ff0000;
+    transform: scale(1.05);
+}
+
+/* Generic Form Styles */
+.generic-form {
+    background-color: #1a1a1a;
+    border: 3px solid #00ff2a;
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 600px;
+    margin: 40px auto;
+    color: white;
+}
+
+.generic-form p {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.generic-form label {
+    display: block;
+    color: #00ff2a;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.generic-form input[type="text"],
+.generic-form input[type="email"],
+.generic-form input[type="url"],
+.generic-form input[type="number"],
+.generic-form input[type="date"],
+.generic-form select,
+.generic-form textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: #000;
+    border: 1px solid #00ff2a;
+    color: white;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.generic-form textarea {
+    height: 150px;
+}
+
+.btn-submit {
+    background-color: #00ff2a;
+    color: #000;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #fff;
+    box-shadow: 0 0 10px #00ff2a;
+}
+
+.btn-cancel {
+    background-color: #333;
+    color: white !important;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none !important;
+    display: inline-block;
+}
+
+.btn-cancel:hover {
+    background-color: #555;
+}
+
+/* Star Rating Styles */
+.rating-form {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.rating-form input {
+    display: none;
+}
+
+.rating-form label {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23555'%3E%3Cpath d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all 0.2s;
+}
+
+.rating-form input:checked ~ label,
+.rating-form label:hover,
+.rating-form label:hover ~ label {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300ff2a'%3E%3Cpath d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/%3E%3C/svg%3E");
+}
+
+.average-stars {
+    display: flex;
+    gap: 2px;
+    margin: 10px 0;
+}
+
+.star {
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.star.full {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300ff2a'%3E%3Cpath d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/%3E%3C/svg%3E");
+}
+
+.star.empty {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23555'%3E%3Cpath d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/%3E%3C/svg%3E");
+}
+
+
+
+/* Video Responsive */
+.video-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+.video-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.video-embed-container {
+    margin-top: 20px;
+}

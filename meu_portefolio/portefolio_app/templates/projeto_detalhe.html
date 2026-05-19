@@ -28,6 +28,7 @@
                     <li><a href="{% url 'portefolio_app:projects' %}"><img src="{% static 'portefolio_app/images/icons/projetos.gif' %}" alt="Projetos" class="nav-icon"> Projetos</a></li>
                     <li><a href="{% url 'portefolio_app:technologies' %}"><img src="{% static 'portefolio_app/images/icons/tecnologias.gif' %}" alt="Tecnologias" class="nav-icon"> Tecnologias</a></li>
                     <li><a href="{% url 'portefolio_app:faculdade' %}"><img src="{% static 'portefolio_app/images/icons/faculdade.gif' %}" alt="Faculdade" class="nav-icon"> Faculdade</a></li>
+                    <li><a href="{% url 'artigos:artigo_list' %}"><img src="{% static 'portefolio_app/images/icons/article.gif' %}" alt="Artigos" class="nav-icon"> Artigos</a></li>
                     <li><a href="{% url 'portefolio_app:contact' %}"><img src="{% static 'portefolio_app/images/icons/contacto.gif' %}" alt="Contacto" class="nav-icon"> Contacto</a></li>
                     {% if user.is_staff %}
                         <li><a href="/admin/" class="admin-link"><img src="{% static 'portefolio_app/images/icons/admin.gif' %}" alt="Admin" class="nav-icon"> Admin</a></li>
@@ -46,6 +47,11 @@
                     <div class="tech-logo-placeholder-mini" style="width: 80px; height: 80px; font-size: 40px;">{{ projeto.titulo|first }}</div>
                 {% endif %}
                 <h2>{{ projeto.titulo }}</h2>
+                {% if user.is_staff %}
+                    <div class="admin-actions">
+                        <a href="{% url 'portefolio_app:edita_projeto' projeto.id %}" class="btn-admin">Editar Projeto</a>
+                    </div>
+                {% endif %}
             </div>
 
             <div class="detail-content">
@@ -93,9 +99,18 @@
                     {% endif %}
                     
                     {% if projeto.video_demo %}
-                        <a href="{{ projeto.video_demo }}" target="_blank" class="btn video-btn">Ver Demonstração</a>
+                        <a href="{{ projeto.video_demo }}" target="_blank" class="btn video-btn">Ver Link do Vídeo</a>
                     {% endif %}
                 </div>
+
+                {% if projeto.youtube_embed_url %}
+                <div class="tech-description-box video-embed-container">
+                    <h3>Vídeo de Demonstração</h3>
+                    <div class="video-responsive">
+                        <iframe width="560" height="315" src="{{ projeto.youtube_embed_url }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                {% endif %}
                 
                 <div class="back-link">
                     <a href="{% url 'portefolio_app:projects' %}">&larr; Voltar para a lista</a>

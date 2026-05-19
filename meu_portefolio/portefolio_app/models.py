@@ -62,11 +62,29 @@ class Projeto(models.Model):
     objetivo = models.TextField(blank=True)
     tecnologias = models.ManyToManyField(Tecnologia)
     imagem = models.ImageField(upload_to='projetos/', blank=True, null=True)
-    video_demo = models.URLField(blank=True)
-    github = models.URLField(blank=True)
+    video_demo = models.CharField(max_length=500, blank=True, help_text="Link para o vídeo de demonstração (ex: YouTube)")
+    github = models.CharField(max_length=500, blank=True, help_text="Link para o repositório GitHub")
 
     def __str__(self):
         return self.titulo
+
+    @property
+    def youtube_embed_url(self):
+        if not self.video_demo:
+            return None
+        
+        # YouTube ID extraction logic
+        video_id = None
+        if 'youtube.com/watch?v=' in self.video_demo:
+            video_id = self.video_demo.split('v=')[1].split('&')[0]
+        elif 'youtu.be/' in self.video_demo:
+            video_id = self.video_demo.split('youtu.be/')[1].split('?')[0]
+        elif 'youtube.com/embed/' in self.video_demo:
+            video_id = self.video_demo.split('embed/')[1].split('?')[0]
+        
+        if video_id:
+            return f"https://www.youtube.com/embed/{video_id}"
+        return None
 
 
 class TFC(models.Model):

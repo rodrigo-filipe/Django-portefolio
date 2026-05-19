@@ -28,6 +28,7 @@
                     <li><a href="{% url 'portefolio_app:projects' %}"><img src="{% static 'portefolio_app/images/icons/projetos.gif' %}" alt="Projetos" class="nav-icon"> Projetos</a></li>
                     <li><a href="{% url 'portefolio_app:technologies' %}"><img src="{% static 'portefolio_app/images/icons/tecnologias.gif' %}" alt="Tecnologias" class="nav-icon"> Tecnologias</a></li>
                     <li><a href="{% url 'portefolio_app:faculdade' %}"><img src="{% static 'portefolio_app/images/icons/faculdade.gif' %}" alt="Faculdade" class="nav-icon"> Faculdade</a></li>
+                    <li><a href="{% url 'artigos:artigo_list' %}"><img src="{% static 'portefolio_app/images/icons/article.gif' %}" alt="Artigos" class="nav-icon"> Artigos</a></li>
                     <li><a href="{% url 'portefolio_app:contact' %}"><img src="{% static 'portefolio_app/images/icons/contacto.gif' %}" alt="Contacto" class="nav-icon"> Contacto</a></li>
                     {% if user.is_staff %}
                         <li><a href="/admin/" class="admin-link"><img src="{% static 'portefolio_app/images/icons/admin.gif' %}" alt="Admin" class="nav-icon"> Admin</a></li>
@@ -39,6 +40,11 @@
     
     <main>
         <h2>Unidades Curriculares</h2>
+        {% if user.is_staff %}
+            <div class="admin-actions">
+                <a href="{% url 'portefolio_app:novo_uc' %}" class="btn-admin">Adicionar Unidade Curricular</a>
+            </div>
+        {% endif %}
         
         <div class="tech-list-vertical">
             {% for uc in ucs %}

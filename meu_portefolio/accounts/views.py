@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from .forms import UserRegistrationForm, MagicLinkForm
 from .models import MagicToken
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 from django.core.mail import send_mail
 from django.conf import settings
 from django.urls import reverse
@@ -22,7 +22,7 @@ def login_view(request):
                 return redirect('portefolio_app:home')
     else:
         form = AuthenticationForm()
-    
+
     magic_form = MagicLinkForm()
     return render(request, 'accounts/login.html', {'form': form, 'magic_form': magic_form})
 
@@ -30,7 +30,9 @@ def register_view(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
-            form.save()
+            user = form.save()
+            autores_group, created = Group.objects.get_or_create(name='autores')
+            user.groups.add(autores_group)
             messages.success(request, 'Conta criada com sucesso! Faça login.')
             return redirect('accounts:login')
     else:
