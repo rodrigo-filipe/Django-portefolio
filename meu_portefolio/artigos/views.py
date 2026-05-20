@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
 from .models import Artigo, Comentario, Rating
@@ -32,7 +33,7 @@ class ArtigoDetailView(DetailView):
         context['user_rating'] = user_rating.valor if user_rating else 0
         return context
 
-class ArtigoCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
+class ArtigoCreateView(LoginRequiredMixin, CreateView):
     model = Artigo
     form_class = ArtigoForm
     template_name = 'artigos/artigo_form.html'
@@ -42,9 +43,6 @@ class ArtigoCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
         form.instance.autor = self.request.user
         return super().form_valid(form)
 
-    def test_func(self):
-        return self.request.user.groups.filter(name='autores').exists()
-
 class ArtigoUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Artigo
     form_class = ArtigoForm
@@ -53,22 +51,15 @@ class ArtigoUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def test_func(self):
         artigo = self.get_object()
-        return self.request.user == artigo.autor and self.request.user.groups.filter(name='autores').exists()
+        return self.request.user == artigo.autor
 
+@login_required
 def like_artigo(request, pk):
     artigo = get_object_or_404(Artigo, pk=pk)
-    if request.user.is_authenticated:
-        if artigo.likes.filter(id=request.user.id).exists():
-            artigo.likes.remove(request.user)
-        else:
-            artigo.likes.add(request.user)
+    if artigo.likes.filter(id=request.user.id).exists():
+        artigo.likes.remove(request.user)
     else:
-        # Anonymous likes using session
-        liked_session_key = f'liked_artigo_{pk}'
-        if not request.session.get(liked_session_key, False):
-            artigo.likes_anonimos += 1
-            artigo.save()
-            request.session[liked_session_key] = True
+        artigo.likes.add(request.user)
     return HttpResponseRedirect(reverse('artigos:artigo_detail', args=[str(pk)]))
 
 def add_comment(request, pk):

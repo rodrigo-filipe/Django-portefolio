@@ -40,9 +40,17 @@
     </header>
     
     <main>
-        <img src="{% static 'portefolio_app/images/67.gif' %}" alt="Foto de Rodrigo Filipe" class="profile-image">
+        <img src="{% static 'portefolio_app/images/icons/HackerMan.jpg' %}" alt="Foto de Rodrigo Filipe" class="profile-image">
         
-        <h2>O meu nome é Rodrigo Filipe e sou estudante de engenharia informática</h2>
+        <h1 style="color: #00ff2a; font-size: 4em; margin-bottom: 10px;">ola sou o rodrigo</h1>
+        <p style="font-size: 1.5em; color: white;">estudante de engenharia informatica e aspirante a informatico relacionado com cibersegurança</p>
+
+        <div class="navbar" style="margin-top: 50px;">
+            <ul>
+                <li><a href="{% url 'portefolio_app:home' %}"><img src="{% static 'portefolio_app/images/icons/home.gif' %}" alt="Portefólio" class="nav-icon"> Portefólio</a></li>
+                <li><a href="https://www.linkedin.com/in/rodrigo-filipe-9b8a5a228/" target="_blank"><img src="{% static 'portefolio_app/images/icons/linkedin.gif' %}" alt="LinkedIn" class="nav-icon"> LinkedIn</a></li>
+            </ul>
+        </div>
     </main>
 </body>
 </html>

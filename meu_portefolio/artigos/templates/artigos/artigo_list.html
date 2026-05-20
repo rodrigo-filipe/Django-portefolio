@@ -43,13 +43,9 @@
             <h2>Artigos Tecnológicos e Soft-Skills</h2>
             <p>Explore conteúdos sobre tecnologia e competências pessoais.</p>
             {% if user.is_authenticated %}
-                {% for group in user.groups.all %}
-                    {% if group.name == 'autores' %}
-                        <div class="admin-actions">
-                            <a href="{% url 'artigos:artigo_create' %}" class="btn-admin">Novo Artigo</a>
-                        </div>
-                    {% endif %}
-                {% endfor %}
+                <div class="admin-actions">
+                    <a href="{% url 'artigos:artigo_create' %}" class="btn-admin">Novo Artigo</a>
+                </div>
             {% endif %}
         </section>
 
