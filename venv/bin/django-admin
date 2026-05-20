@@ -1,4 +1,4 @@
-#!/workspaces/Django-portefolio/venv/bin/python
+#!/workspaces/Django-portefolio/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
