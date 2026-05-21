@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ docente.nome }} - Detalhes</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portefolio_app/css/style.css' %}?v=3.0">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <h1>Meu Portefólio</h1>
+            <div class="user-auth">
+                {% if user.is_authenticated %}
+                    <span>Olá, {{ user.username }}</span>
+                    <a href="{% url 'accounts:logout' %}">Logout</a>
+                {% else %}
+                    <a href="{% url 'accounts:login' %}">Login</a>
+                    <a href="{% url 'accounts:register' %}">Sign In</a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="header-bottom">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="{% url 'portefolio_app:home' %}"><img src="{% static 'portefolio_app/images/home.gif' %}" alt="Home" class="nav-icon"> Home</a></li>
+                    <li><a href="{% url 'portefolio_app:about' %}"><img src="{% static 'portefolio_app/images/info.gif' %}" alt="Sobre" class="nav-icon"> Sobre</a></li>
+                    <li><a href="{% url 'portefolio_app:projects' %}"><img src="{% static 'portefolio_app/images/projetos.gif' %}" alt="Projetos" class="nav-icon"> Projetos</a></li>
+                    <li><a href="{% url 'portefolio_app:technologies' %}"><img src="{% static 'portefolio_app/images/tecnologias.gif' %}" alt="Tecnologias" class="nav-icon"> Tecnologias</a></li>
+                    <li><a href="{% url 'portefolio_app:faculdade' %}"><img src="{% static 'portefolio_app/images/faculdade.gif' %}" alt="Faculdade" class="nav-icon"> Faculdade</a></li>
+                    <li><a href="{% url 'artigos:artigo_list' %}"><img src="{% static 'portefolio_app/images/article.gif' %}" alt="Artigos" class="nav-icon"> Artigos</a></li>
+                    <li><a href="{% url 'portefolio_app:contact' %}"><img src="{% static 'portefolio_app/images/contacto.gif' %}" alt="Contacto" class="nav-icon"> Contacto</a></li>
+                    {% if user.is_staff %}
+                        <li><a href="/admin/" class="admin-link"><img src="{% static 'portefolio_app/images/admin.gif' %}" alt="Admin" class="nav-icon"> Admin</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <div class="detail-container">
+            <div class="detail-header">
+                {% if docente.foto %}
+                <img src="{{ docente.foto.url }}" alt="{{ docente.nome }}" class="tech-logo-detail">
+                {% endif %}
+                <h2>{{ docente.nome }}</h2>
+                {% if user.is_staff %}
+                    <div class="admin-actions">
+                        <a href="{% url 'portefolio_app:edita_docente' docente.id %}" class="btn-admin">Editar Docente</a>
+                    </div>
+                {% endif %}
+            </div>
+            
+            <div class="detail-content">
+                {% if docente.email %}
+                <p class="tech-category"><strong>Email:</strong> <a href="mailto:{{ docente.email }}">{{ docente.email }}</a></p>
+                {% endif %}
+                
+                {% if docente.pagina_pessoal %}
+                <div class="tech-action" style="margin-top: 20px;">
+                    <a href="{{ docente.pagina_pessoal }}" target="_blank" class="btn-primary">Visitar Página Pessoal</a>
+                </div>
+                {% endif %}
+                
+                <div class="back-link">
+                    <a href="{% url 'portefolio_app:docentes' %}">← Voltar para a lista</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
