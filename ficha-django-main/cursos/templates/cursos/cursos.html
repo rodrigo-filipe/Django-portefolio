@@ -1,0 +1,18 @@
+{% extends "cursos/base.html" %}
+
+{% block main %}
+
+    {% for cursos in cursos %}
+
+        {{cursos}}: {{curso.professor}}. Alunos:
+
+        {% for aluno in curso.alunos.all %}
+
+            <a href="{% url 'aluno-url' aluno.id %}"> {{aluno}} </a>
+
+        {% endfor %}
+
+    {% endfor %}
+
+{% endblock %}
+    
