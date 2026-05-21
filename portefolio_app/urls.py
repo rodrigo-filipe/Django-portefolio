@@ -34,4 +34,5 @@ urlpatterns = [
     path('tfc/<int:pk>/', views.tfc_detalhe, name='tfc_detail'),
     path('tfc/novo/', views.novo_tfc, name='novo_tfc'),
     path('tfc/<int:pk>/editar/', views.edita_tfc, name='edita_tfc'),
+    path('makingof/<int:pk>/', views.makingof_detail, name='makingof_detail'),
 ]

@@ -325,25 +325,40 @@ class MakingOf(models.Model):
 </pre>
         </section>
 
-        <!-- 3. Tecnologias -->
+        <!-- Tecnologias Utilizadas no Desenvolvimento -->
         <section class="sobre-section">
-            <h3>3. Tecnologias</h3>
+            <h3>Tecnologias Utilizadas</h3>
             <div class="tech-grid">
-                {% for categoria in categorias %}
                 <div class="tech-category-group">
-                    <h4 style="color: #00ff2a; border-bottom: 1px solid #00ff2a33; padding-bottom: 5px; margin-bottom: 15px;">{{ categoria.nome }}</h4>
-                    {% for tech in categoria.tecnologias.all %}
-                    <div class="tech-item" style="margin-bottom: 15px;">
-                        <h5>{{ tech.nome }}</h5>
-                        <p style="text-align: left; font-size: 0.9em;"><strong>Descrição:</strong> {{ tech.descricao }}</p>
-                        <p style="text-align: left; font-size: 0.9em;"><strong>Gostei:</strong> {{ tech.aspectos_positivos }}</p>
-                        <p style="text-align: left; font-size: 0.9em;"><strong>Melhorar:</strong> {{ tech.aspectos_negativos }}</p>
-                    </div>
-                    {% endfor %}
+                    <h4 style="color: #00ff2a; border-bottom: 1px solid #00ff2a33; padding-bottom: 5px; margin-bottom: 15px;">Core & Backend</h4>
+                    <ul>
+                        <li><strong>Python 3:</strong> Linguagem base do projeto.</li>
+                        <li><strong>Django 6.0:</strong> Framework web principal.</li>
+                        <li><strong>PostgreSQL:</strong> Base de dados relacional (Neon.tech).</li>
+                    </ul>
                 </div>
-                {% empty %}
-                <p>Configure as categorias e tecnologias no painel de administração.</p>
-                {% endfor %}
+                <div class="tech-category-group">
+                    <h4 style="color: #00ff2a; border-bottom: 1px solid #00ff2a33; padding-bottom: 5px; margin-bottom: 15px;">Frontend</h4>
+                    <ul>
+                        <li><strong>HTML5 / CSS3:</strong> Estrutura e estilização personalizada.</li>
+                        <li><strong>JavaScript:</strong> Interatividade do lado do cliente.</li>
+                    </ul>
+                </div>
+                <div class="tech-category-group">
+                    <h4 style="color: #00ff2a; border-bottom: 1px solid #00ff2a33; padding-bottom: 5px; margin-bottom: 15px;">Gestão & Deployment</h4>
+                    <ul>
+                        <li><strong>Cloudinary:</strong> Alojamento de ficheiros media.</li>
+                        <li><strong>WhiteNoise:</strong> Serviço de ficheiros estáticos.</li>
+                        <li><strong>Pillow / Django-environ:</strong> Processamento de imagem e gestão de segredos.</li>
+                    </ul>
+                </div>
+                <div class="tech-category-group">
+                    <h4 style="color: #00ff2a; border-bottom: 1px solid #00ff2a33; padding-bottom: 5px; margin-bottom: 15px;">Ferramentas</h4>
+                    <ul>
+                        <li><strong>Git & GitHub:</strong> Controlo de versões.</li>
+                        <li><strong>Virtualenv:</strong> Isolamento de dependências.</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -352,6 +367,7 @@ class MakingOf(models.Model):
             <h3>4. Estrutura das Páginas (Navegação)</h3>
             <p>Mapa de navegação da aplicação, demonstrando a hierarquia das páginas.</p>
             <pre class="code-block"> 
+0 TECNOLOGIAS UTILIZADAS
 1 INÍCIO (Home)
 2 ├── SOBRE
 3 ├── PROJETOS
@@ -407,7 +423,7 @@ class MakingOf(models.Model):
                         <tr>
                             <td>{{ mo.data|date:"d/m/Y" }}</td>
                             <td>{{ mo.entidade_relacionada }}</td>
-                            <td><strong>{{ mo.titulo }}</strong><br><span style="font-size: 0.85em; color: #ccc;">{{ mo.descricao }}</span></td>
+                            <td><a href="{% url 'portefolio_app:makingof_detail' mo.id %}" style="color: #00ff2a; text-decoration: none;"><strong>{{ mo.titulo }}</strong></a><br><span style="font-size: 0.85em; color: #ccc;">{{ mo.descricao }}</span></td>
                             <td>{{ mo.erro_correcao }}</td>
                         </tr>
                         {% empty %}

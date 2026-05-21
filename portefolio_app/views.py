@@ -183,3 +183,7 @@ def edita_tfc(request, pk):
     else:
         form = TFCForm(instance=tfc)
     return render(request, 'generic_form.html', {'form': form, 'titulo': f'Editar TFC: {tfc.titulo}'})
+
+def makingof_detail(request, pk):
+    making_of = get_object_or_404(MakingOf, pk=pk)
+    return render(request, 'makingof_detail.html', {'mo': making_of})
