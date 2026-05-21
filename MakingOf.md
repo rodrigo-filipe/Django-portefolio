@@ -102,6 +102,10 @@ Alteração: MakingOf
 
 ![makingof](/images/makingof.PNG)
 
+**Falta de informação no MakingOf**
+
+Devido a falta de tempo e priorizar o desenvolvimento do site, não foi possivel colocar mais informação até á data
+
 **Obras de arte**
 
 Em desespero decido virar artista, deve ser um trauma meu

@@ -9,10 +9,6 @@ Progeto para portefolio
 
 2 - Dirigir-se á pasta do projeto
 
-Ex.:(no meu caso)
-```
-cd C:\Users\PC\Desktop\meu_portefolio
-```
 3 - Entrar no venv (virtual enviroment)
 
 ```
@@ -70,19 +66,5 @@ python manage.py migrate
 ```
 
 ---
-
-## comandos do manage
-
-```
-python manage.py import_tfc
-python manage.py import_data
-```
-
----
-
-## Informações adicionais
-+ O script de import dos TFCs foi gerado por inteligencia artificial, não foi criado por mim
-+ A entidade TFC tem informações incorretas uma vez que o meu codigo de extração dos TFCs estava incorreto e não consegui corrigir
-+ Os erros cometidos nesta parte do projeto pretendo corrigir na parte 2 (se me for permitido)
 
 
