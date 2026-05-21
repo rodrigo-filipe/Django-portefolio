@@ -161,9 +161,9 @@
             <p>O Django utiliza o padrão de arquitetura <strong>MVT (Model-View-Template)</strong>, que é uma variação do MVC (Model-View-Controller).</p>
             
             <div class="architecture-content">
-                <p><strong>Desenho da Arquitetura (Papel e Lápis):</strong></p>
-                <img src="{% static 'portefolio_app/images/mvt_desenho.png' %}" alt="Desenho da Arquitetura MVT" class="diagram-img">
-                <p style="font-size: 0.9em; color: #888; font-style: italic; text-align: center;">Nota: Carregue a fotografia do seu desenho para a pasta static</p>
+                <p><strong>Esquema da Arquitetura:</strong></p>
+                <img src="{% static 'portefolio_app/images/MVC.jpg' %}" alt="Desenho da Arquitetura MVT" class="diagram-img">
+                
 
                 <ul>
                     <li><strong>Model:</strong> Gere os dados e a lógica da base de dados. Define a estrutura das tabelas.</li>
@@ -172,12 +172,6 @@
                 </ul>
                 <p><strong>Fluxo:</strong> Pedido HTTP &rarr; URL Dispatcher &rarr; View &rarr; Model (opcional) &rarr; View &rarr; Template &rarr; Resposta HTTP.</p>
             </div>
-
-            <h4>Vídeo Tutorial: Criação de Formulário de Projeto</h4>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <p style="font-size: 0.9em; color: #888; font-style: italic; text-align: center;">Substitua o ID no código do template pelo ID do seu vídeo tutorial</p>
         </section>
 
         <!-- 2. Modelação -->
@@ -186,16 +180,149 @@
             <p>A estrutura de dados da aplicação baseia-se num Diagrama Entidade-Relação que define como as UCs, Projetos, Docentes e Tecnologias se interligam.</p>
             
             <h4>Diagrama Entidade-Relação (DER)</h4>
-            <img src="{% static 'portefolio_app/images/der_desenho.png' %}" alt="Diagrama Entidade Relação" class="diagram-img">
+            <img src="{% static 'portefolio_app/images/der_desenho.jpeg' %}" alt="Diagrama Entidade Relação" class="diagram-img">
 
             <h4>Implementação em models.py</h4>
             <pre class="code-block">
+from django.db import models
+from django.utils.timezone import now
+import datetime
+from django.core.validators import MinValueValidator, MaxValueValidator
+
+# Create your models here.
+
+class Licenciatura(models.Model):
+    nome = models.CharField(max_length=200)
+    codigo = models.PositiveIntegerField(default=260, unique=True)
+    instituicao = models.CharField(max_length=200, default="Universidade Lusófona")
+    descricao = models.TextField(blank=True)
+    duracao_anos = models.PositiveIntegerField(default=3)
+    data_inicio = models.DateField(default=datetime.date.today)
+    lic_link = models.URLField(default="https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-informatica")
+
+    def __str__(self):
+        return self.nome
+
+
+class Docente(models.Model):
+    nome = models.CharField(unique=True, max_length=150)
+    email = models.EmailField(blank=True, null=True)
+    pagina_pessoal = models.URLField(blank=True)
+    foto = models.ImageField(upload_to='docentes/', blank=True, null=True)
+
+    def __str__(self):
+        return self.nome
+
+
+class UnidadeCurricular(models.Model):
+    nome = models.CharField(max_length=200)
+    codigo = models.CharField(max_length=50, unique=True)
+    licenciatura = models.ForeignKey(Licenciatura, on_delete=models.CASCADE, related_name='ucs', default=260)
+    ano = models.PositiveIntegerField(choices=[(1, 1), (2, 2), (3, 3)])
+    semestre = models.PositiveIntegerField(choices=[(1, 1), (2, 2)])
+    ects = models.PositiveIntegerField(default=6)
+    descricao = models.TextField(blank=True)
+    imagem = models.ImageField(upload_to='ucs/', blank=True, null=True)
+    docentes = models.ManyToManyField(Docente, related_name='ucs')
+
+    def __str__(self):
+        return f"{self.codigo} - {self.nome}"
+
+
+class CategoriaTecnologia(models.Model):
+    nome = models.CharField(max_length=100, unique=True) # Frontend, Backend, Base de Dados, Storage, Outros
+
+    def __str__(self):
+        return self.nome
+
+class Tecnologia(models.Model):
+    nome = models.CharField(max_length=100, unique=True)
+    logo = models.ImageField(upload_to='tecnologias/', blank=True, null=True)
+    site_oficial = models.URLField(blank=True)
+    descricao = models.TextField(blank=True, help_text="O que esta tecnologia faz e permite")
+    aspectos_positivos = models.TextField(blank=True, help_text="Aspetos que gostou")
+    aspectos_negativos = models.TextField(blank=True, help_text="Aspetos que não gostou")
+    nivel_interesse = models.PositiveIntegerField(default=3, validators=[MinValueValidator(1), MaxValueValidator(5)])
+    categoria_relacionada = models.ForeignKey(CategoriaTecnologia, on_delete=models.SET_NULL, null=True, blank=True, related_name='tecnologias')
+    # Mantemos categoria como CharField por agora para não quebrar queries antigas até migração completa
+    categoria = models.CharField(max_length=50, blank=True) 
+
+    def __str__(self):
+        return self.nome
+
+
 class Projeto(models.Model):
     titulo = models.CharField(max_length=200, unique=True)
     unidade_curricular = models.ForeignKey(UnidadeCurricular, on_delete=models.SET_NULL, null=True, blank=True)
     descricao = models.TextField()
+    objetivo = models.TextField(blank=True)
     tecnologias = models.ManyToManyField(Tecnologia)
-    # ... outros campos</pre>
+    imagem = models.ImageField(upload_to='projetos/', blank=True, null=True)
+    video_demo = models.CharField(max_length=500, blank=True, help_text="Link para o vídeo de demonstração (ex: YouTube)")
+    github = models.CharField(max_length=500, blank=True, help_text="Link para o repositório GitHub")
+
+    def __str__(self):
+        return self.titulo
+
+
+class TFC(models.Model):
+    titulo = models.CharField(max_length=300)
+    alunos = models.CharField(max_length=300)
+    orientador = models.CharField(max_length=200)
+    ano = models.IntegerField(default=2025)
+    licenciatura = models.CharField(max_length=100)
+    email = models.EmailField(blank=True, null=True)
+    descricao = models.TextField()
+    palavras_chave = models.TextField()
+    areas = models.TextField()
+    tecnologias_usadas = models.TextField()
+    pdf = models.FileField(upload_to='tfc/', blank=True, null=True)
+    rating = models.PositiveIntegerField(default=5, validators=[MinValueValidator(1), MaxValueValidator(5)])
+
+    def __str__(self):
+        return self.titulo
+
+
+class Formacao(models.Model):
+    titulo = models.CharField(max_length=200, unique=True)
+    instituicao = models.CharField(max_length=150)
+    data_inicio = models.DateField()
+    data_fim = models.DateField(null=True, blank=True)
+    descricao = models.TextField(blank=True)
+    certificado = models.FileField(upload_to='formacoes/', blank=True, null=True)
+
+    class Meta:
+        ordering = ['-data_inicio']
+
+    def __str__(self):
+        return f"{self.titulo} - {self.instituicao}"
+
+
+class Competencia(models.Model):
+    nome = models.CharField(max_length=150, unique=True)
+    descricao = models.TextField(blank=True)
+    nivel = models.PositiveIntegerField(choices=[(1, 'Básico'), (2, 'Intermédio'), (3, 'Avançado')], default=2)
+    projetos = models.ManyToManyField(Projeto, blank=True)
+    tecnologias = models.ManyToManyField(Tecnologia, blank=True)
+    formacoes = models.ManyToManyField(Formacao, blank=True)
+
+    def __str__(self):
+        return self.nome
+
+
+# === ENTIDADE OBRIGATÓRIA: MAKING OF ===
+class MakingOf(models.Model):
+    titulo = models.CharField(max_length=200)
+    descricao = models.TextField()
+    data = models.DateField(default=now)
+    foto = models.ImageField(upload_to='makingof/', blank=True, null=True)
+    entidade_relacionada = models.CharField(max_length=100)
+    justificacao = models.TextField(blank=True)
+    erro_correcao = models.TextField(blank=True)
+
+    def __str__(self):
+        return f"{self.entidade_relacionada} - {self.titulo}"
+</pre>
         </section>
 
         <!-- 3. Tecnologias -->
@@ -224,7 +351,26 @@ class Projeto(models.Model):
         <section class="sobre-section">
             <h3>4. Estrutura das Páginas (Navegação)</h3>
             <p>Mapa de navegação da aplicação, demonstrando a hierarquia das páginas.</p>
-            <img src="{% static 'portefolio_app/images/mapa_navegacao.png' %}" alt="Mapa de Navegação" class="diagram-img">
+            <pre class="code-block"> 
+1 INÍCIO (Home)
+2 ├── SOBRE
+3 ├── PROJETOS
+4 │   └── Detalhe do Projeto (Visualizar / Editar / Novo)
+5 ├── TECNOLOGIAS
+6 │   └── Detalhe da Tecnologia (Visualizar / Editar / Nova)
+7 ├── FACULDADE
+8 │   ├── DOCENTES (Listagem / Detalhe)
+9 │   ├── UCs (Listagem / Detalhe)
+10 │   └── TFCs (Listagem / Detalhe)
+11 ├── ARTIGOS
+12 │   └── Detalhe do Artigo (Ler / Comentar / Like)
+13 ├── CONTACTO
+14 └── ÁREA DE UTILIZADOR
+15     ├── Login / Registo
+16     └── Admin (Django Admin)
+            </pre>
+
+
         </section>
 
         <!-- 5. Repositório GitHub -->
